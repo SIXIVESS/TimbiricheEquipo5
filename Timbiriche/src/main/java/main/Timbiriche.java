@@ -5,7 +5,7 @@ package main;
  * ejecución del programa. Representa el punto de entrada de la aplicación o
  * juego Timbiriche.
  *
- * @uthor Equipo 5
+ * @Author Equipo 5
  */
 public class Timbiriche {
 
