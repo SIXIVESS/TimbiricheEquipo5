@@ -17,4 +17,6 @@ public interface IAjustes {
     
     public void btnRegresarUnirseSala();
 
+    public void abrirPantalla();
+
 }
