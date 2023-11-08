@@ -2,13 +2,18 @@
 
 package com.mycompany.timbiriche;
 
+import modelo.IMenuPrincipal;
+import vista.FrmMenuPrincipal;
+
 /**
  *
  * @author chaly
  */
-public class Timbiriche {
 
+
+    public class Timbiriche {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        IMenuPrincipal menuPrincipal = new IMenuPrincipal(); 
+        new FrmMenuPrincipal(menuPrincipal).setVisible(true);
     }
 }

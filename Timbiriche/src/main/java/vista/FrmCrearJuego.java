@@ -12,6 +12,7 @@ public class FrmCrearJuego extends javax.swing.JFrame {
     
     /**
      * Creates new form FrmCrearJuego
+     * @param crearJuego
      */
     public FrmCrearJuego( ICrearJuego crearJuego) {
         this.crearJuego=crearJuego;

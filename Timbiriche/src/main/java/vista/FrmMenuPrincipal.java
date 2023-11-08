@@ -1,6 +1,5 @@
 package vista;
 
-import java.awt.HeadlessException;
 import modelo.Fondo;
 import modelo.IMenuPrincipal;
 
