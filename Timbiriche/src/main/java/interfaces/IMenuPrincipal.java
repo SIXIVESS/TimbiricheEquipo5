@@ -1,9 +1,9 @@
-package modelo;
+package interfaces;
 
 public interface IMenuPrincipal {
     public void btnCrear();
     
-    public void btnUnir();
+    public void btnUnire();
     
     public void abrirMenu();
     

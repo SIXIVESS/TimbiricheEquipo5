@@ -1,6 +1,6 @@
 package vista;
 
-import modelo.ICrearJuego;
+import interfaces.ICrearJuego;
 
 /**
  *

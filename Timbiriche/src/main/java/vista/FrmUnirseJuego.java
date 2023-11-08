@@ -1,6 +1,6 @@
 package vista;
 
-import modelo.IUnirseJuego;
+import interfaces.IUnirseJuego;
 
 public class FrmUnirseJuego extends javax.swing.JFrame {
     
