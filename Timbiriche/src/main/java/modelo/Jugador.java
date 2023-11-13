@@ -13,7 +13,7 @@ import java.awt.Color;
 public class Jugador {
 
     private String nombre;
-    private Color color;
+    private String color;
     private int puntaje;
 
     /**
@@ -23,7 +23,7 @@ public class Jugador {
      * @param nombre el nombre del jugador
      * @param color el color del jugador representado como un carácter
      */
-    public Jugador(String nombre, Color color) {
+    public Jugador(String nombre, String color) {
         this.nombre = nombre;
         this.color = color;
         this.puntaje = 0;
@@ -52,7 +52,7 @@ public class Jugador {
      *
      * @return el color del jugador representado como un carácter
      */
-    public Color getColor() {
+    public String getColor() {   
         return color;
     }
 
@@ -61,7 +61,7 @@ public class Jugador {
      *
      * @param color el color del jugador representado como un carácter
      */
-    public void setColor(Color color) {
+    public void setColor(String color) {    
         this.color = color;
     }
 

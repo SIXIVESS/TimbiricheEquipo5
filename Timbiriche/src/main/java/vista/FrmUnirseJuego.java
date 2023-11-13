@@ -9,7 +9,11 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
     /**
      * Creates new form FrmUnirseJuego
      */
-    public FrmUnirseJuego(IUnirseJuego unirseJuego) {
+    public FrmUnirseJuego() {
+        initComponents();
+    }
+    
+public FrmUnirseJuego(IUnirseJuego unirseJuego) {
         this.unirseJuego = unirseJuego;
         initComponents();
     }
@@ -102,11 +106,13 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        unirseJuego.regresarMenu();
+         new FrmMenuPrincipal().setVisible(true);
+         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
-        unirseJuego.siguiente();
+        new FrmConfiguracion().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnContinuarActionPerformed
 
  

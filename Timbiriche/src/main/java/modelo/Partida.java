@@ -37,7 +37,7 @@ public class Partida {
      * @param nombre el nombre del jugador
      * @param color el color del jugador representado como un carácter
      */
-    public void agregarJugador(String nombre, Color color) {
+    public void agregarJugador(String nombre, String color) {
         jugadores.add(new Jugador(nombre, color));
     }
 

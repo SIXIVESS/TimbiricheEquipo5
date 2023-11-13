@@ -14,8 +14,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
      * @param menuPrincipal
      */
     public FrmMenuPrincipal(IMenuPrincipal menuPrincipal) {
-        initComponents();
         this.menuPrincipal = menuPrincipal;
+    }
+
+    public FrmMenuPrincipal() {
+        initComponents();
+  
     }
 
     @SuppressWarnings("unchecked")
@@ -116,16 +120,18 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        menuPrincipal.salir();
+        dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
 
     private void btnUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirseActionPerformed
-        menuPrincipal.btnUnire();
+          new FrmUnirseJuego().setVisible(true);
+            dispose();
     }//GEN-LAST:event_btnUnirseActionPerformed
 
     private void bntCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCrearPartidaActionPerformed
-        menuPrincipal.btnCrear();
+     new FrmCrearJuego().setVisible(true);
+       dispose();
     }//GEN-LAST:event_bntCrearPartidaActionPerformed
 
     /**

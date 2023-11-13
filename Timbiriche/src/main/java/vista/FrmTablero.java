@@ -17,59 +17,59 @@ import modelo.Partida;
  */
 public class FrmTablero extends javax.swing.JFrame {
 
-    PnlDibujo panelDibujo;
-    Partida partida;
-
-    /**
-     * Creates new form FrmTablero
-     */
-    public FrmTablero(Partida partida) {
-        this.partida = partida;
-        initComponents();
-        panelDibujo = new PnlDibujo(partida, 600, 600);
-        agregarTablero();
-        this.setResizable(false);
-        agregarJugadoresTabla();
-    }
-
-    private void agregarJugadoresTabla() {
-        Map<Integer, Color> colorMap = new HashMap<>();
-        DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (int i = 0; i < partida.getJugadores().size(); i++) {
-            Jugador jugador = partida.getJugadores().get(i);
-            listModel.addElement(jugador.toString());
-            colorMap.put(i, jugador.getColor());
-        }
-
-        // Set a custom cell renderer for the JList to display colored items
-        puntajeList.setCellRenderer(new DefaultListCellRenderer() {
-            @Override
-            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-                Component renderer = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-
-                // Set the foreground color based on the ScoreData's color
-                if (value instanceof String) {
-                    String stringValue = (String) value;
-                    String[] parts = stringValue.split("        ");
-                    if (parts.length == 2) {
-                        label.setForeground(partida.getJugadores().get(index).getColor());
-                    }
-                }
-
-                return renderer;
-            }
-        });
-
-        puntajeList.setModel(listModel);
-
-    }
-
-    private void agregarTablero() {
-        panelDibujo.setSize(600, 600);
-        pnlConTablero.add(panelDibujo);
-        panelDibujo.repaint();
-    }
+//    PnlDibujo panelDibujo;
+//    Partida partida;
+//
+//    /**
+//     * Creates new form FrmTablero
+//     */
+//    public FrmTablero(Partida partida) {
+//        this.partida = partida;
+//        initComponents();
+//        panelDibujo = new PnlDibujo(partida, 600, 600);
+//        agregarTablero();
+//        this.setResizable(false);
+//        agregarJugadoresTabla();
+//    }
+//
+//    private void agregarJugadoresTabla() {
+//        Map<Integer, Color> colorMap = new HashMap<>();
+//        DefaultListModel<String> listModel = new DefaultListModel<>();
+//        for (int i = 0; i < partida.getJugadores().size(); i++) {
+//            Jugador jugador = partida.getJugadores().get(i);
+//            listModel.addElement(jugador.toString());
+//            colorMap.put(i, jugador.getColor());
+//        }
+//
+//        // Set a custom cell renderer for the JList to display colored items
+//        puntajeList.setCellRenderer(new DefaultListCellRenderer() {
+//            @Override
+//            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+//                Component renderer = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+//                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+//
+//                // Set the foreground color based on the ScoreData's color
+//                if (value instanceof String) {
+//                    String stringValue = (String) value;
+//                    String[] parts = stringValue.split("        ");
+//                    if (parts.length == 2) {
+//                        label.setForeground(partida.getJugadores().get(index).getColor());
+//                    }
+//                }
+//
+//                return renderer;
+//            }
+//        });
+//
+//        puntajeList.setModel(listModel);
+//
+//    }
+//
+//    private void agregarTablero() {
+//        panelDibujo.setSize(600, 600);
+//        pnlConTablero.add(panelDibujo);
+//        panelDibujo.repaint();
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -161,40 +161,40 @@ public class FrmTablero extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        Partida par = new Partida(10, 2);
-        par.agregarJugador("Juan", Color.BLUE);
-        par.agregarJugador("Perez", Color.RED);
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmTablero(par).setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(FrmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        Partida par = new Partida(10, 2);
+//        par.agregarJugador("Juan", Color.BLUE);
+//        par.agregarJugador("Perez", Color.RED);
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FrmTablero(par).setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;

@@ -1,5 +1,7 @@
 package main;
 
+import vista.FrmMenuPrincipal;
+
 /**
  * La clase Timbiriche es la clase principal que contiene el método main para la
  * ejecución del programa. Representa el punto de entrada de la aplicación o
@@ -16,6 +18,6 @@ public class Timbiriche {
      * @param args los argumentos de la línea de comandos
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+         new FrmMenuPrincipal().setVisible(true);
     }
 }
