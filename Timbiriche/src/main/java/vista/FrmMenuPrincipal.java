@@ -1,7 +1,7 @@
 package vista;
 
 import modelo.Fondo;
-import modelo.IMenuPrincipal;
+import interfaces.IMenuPrincipal;
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
@@ -10,11 +10,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmMenuPrincipal
+     *
      * @param menuPrincipal
      */
     public FrmMenuPrincipal(IMenuPrincipal menuPrincipal) {
         initComponents();
-        this.menuPrincipal= menuPrincipal;
+        this.menuPrincipal = menuPrincipal;
     }
 
     @SuppressWarnings("unchecked")
@@ -115,12 +116,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-menuPrincipal.salir();
+        menuPrincipal.salir();
     }//GEN-LAST:event_btnSalirActionPerformed
 
 
     private void btnUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirseActionPerformed
-        menuPrincipal.btnUnir();
+        menuPrincipal.btnUnire();
     }//GEN-LAST:event_btnUnirseActionPerformed
 
     private void bntCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCrearPartidaActionPerformed
