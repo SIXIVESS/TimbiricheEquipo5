@@ -10,8 +10,7 @@ package modelo;
  */
 public class Tablero {
 
-    private int largo;
-    private int ancho;
+    private int dimension;
     private int[][] tablero;
     private int jugadorActual;
 
@@ -21,9 +20,8 @@ public class Tablero {
      * @param dimension la dimensión del tablero (tanto en largo como en ancho)
      */
     public Tablero(int dimension) {
-        this.largo = largo;
-        this.ancho = ancho;
-        this.tablero = new int[largo][ancho];
+        this.tablero = new int[dimension][dimension];
+        this.dimension = dimension;
         this.jugadorActual = 0;
     }
 
@@ -81,4 +79,30 @@ public class Tablero {
         // Aquí se implementaría la lógica para determinar el ganador de la partida
         return 0;
     }
+
+    public int getJugadorActual() {
+        return jugadorActual;
+    }
+
+    public void setJugadorActual(int jugadorActual) {
+        this.jugadorActual = jugadorActual;
+    }
+
+    public int getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(int dimension) {
+        this.dimension = dimension;
+    }
+
+    public int[][] getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(int[][] tablero) {
+        this.tablero = tablero;
+    }
+    
+    
 }

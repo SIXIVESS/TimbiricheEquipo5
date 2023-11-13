@@ -1,16 +1,43 @@
 package vista;
 
+import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
+import modelo.Jugador;
+import modelo.Partida;
+
 /**
  *
  * @author chaly
  */
 public class FrmTablero extends javax.swing.JFrame {
-
+    
+    PnlDibujo panelDibujo;
+    Partida partida;
+    
     /**
      * Creates new form FrmTablero
      */
-    public FrmTablero() {
+    public FrmTablero(Partida partida) {
+        this.partida = partida;
         initComponents();
+        panelDibujo = new PnlDibujo(partida, 600, 600);
+        agregarTablero();
+        this.setResizable(false);
+        agregarJugadoresTabla();
+    }
+    
+    private void agregarJugadoresTabla(){
+        DefaultTableModel model = (DefaultTableModel) jTableJugadores.getModel();
+        for (Jugador object : partida.getJugadores()) {
+            model.addRow(new Object[]{object.getNombre(), 0});
+        }
+        
+    }
+    
+    private void agregarTablero() {
+        panelDibujo.setSize(600, 600);
+        pnlConTablero.add(panelDibujo);
+        panelDibujo.repaint();
     }
 
     /**
@@ -22,17 +49,73 @@ public class FrmTablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        pnlConTablero = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableJugadores = new javax.swing.JTable();
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1150, 754));
+        setMinimumSize(new java.awt.Dimension(1150, 754));
+
+        pnlConTablero.setPreferredSize(new java.awt.Dimension(600, 600));
+
+        javax.swing.GroupLayout pnlConTableroLayout = new javax.swing.GroupLayout(pnlConTablero);
+        pnlConTablero.setLayout(pnlConTableroLayout);
+        pnlConTableroLayout.setHorizontalGroup(
+            pnlConTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        pnlConTableroLayout.setVerticalGroup(
+            pnlConTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jTableJugadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "null", "null"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTableJugadores);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
+                .addComponent(pnlConTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(201, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlConTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addGap(201, 201, 201))
         );
 
         pack();
@@ -65,14 +148,22 @@ public class FrmTablero extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        Partida par = new Partida(10, 2);
+        par.agregarJugador("Juan", Color.BLUE);
+        par.agregarJugador("Perez", Color.RED);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmTablero().setVisible(true);
+                new FrmTablero(par).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableJugadores;
+    private javax.swing.JPanel pnlConTablero;
     // End of variables declaration//GEN-END:variables
 }
