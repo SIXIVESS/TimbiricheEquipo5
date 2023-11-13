@@ -111,4 +111,9 @@ public class Jugador {
     public void abandonarJuego() {
         // Aquí se implementaría la lógica para que el jugador abandone la partida
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s        %d", nombre, puntaje);
+    }
 }
