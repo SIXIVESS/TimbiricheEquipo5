@@ -3,6 +3,8 @@
  */
 package modelo;
 
+import java.awt.Color;
+
 /**
  * La clase Jugador representa a un jugador en el juego.
  *
@@ -11,7 +13,7 @@ package modelo;
 public class Jugador {
 
     private String nombre;
-    private char color;
+    private Color color;
     private int puntaje;
 
     /**
@@ -21,7 +23,7 @@ public class Jugador {
      * @param nombre el nombre del jugador
      * @param color el color del jugador representado como un carácter
      */
-    public Jugador(String nombre, char color) {
+    public Jugador(String nombre, Color color) {
         this.nombre = nombre;
         this.color = color;
         this.puntaje = 0;
@@ -50,7 +52,7 @@ public class Jugador {
      *
      * @return el color del jugador representado como un carácter
      */
-    public char getColor() {
+    public Color getColor() {
         return color;
     }
 
@@ -59,7 +61,7 @@ public class Jugador {
      *
      * @param color el color del jugador representado como un carácter
      */
-    public void setColor(char color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

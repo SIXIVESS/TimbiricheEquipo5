@@ -3,6 +3,7 @@
  */
 package modelo;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -27,7 +28,7 @@ public class Partida {
     public Partida(int dimension, int totalJugadores) {
         this.tablero = new Tablero(dimension);
         this.turno = new Turno(totalJugadores);
-        this.jugadores = new ArrayList<Jugador>();
+        this.jugadores = new ArrayList<>();
     }
 
     /**
@@ -36,8 +37,8 @@ public class Partida {
      * @param nombre el nombre del jugador
      * @param color el color del jugador representado como un carácter
      */
-    public void agregarJugador(String nombre, char color) {
-        // Aquí se implementaría la lógica para agregar un jugador a la partida
+    public void agregarJugador(String nombre, Color color) {
+        jugadores.add(new Jugador(nombre, color));
     }
 
     /**
@@ -73,4 +74,17 @@ public class Partida {
         // Aquí se implementaría la lógica para verificar si la partida ha finalizado
         return false;
     }
+
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+    
 }
