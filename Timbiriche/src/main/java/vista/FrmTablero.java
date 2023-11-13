@@ -1,7 +1,13 @@
 package vista;
 
 import java.awt.Color;
-import javax.swing.table.DefaultTableModel;
+import java.awt.Component;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import modelo.Jugador;
 import modelo.Partida;
 
@@ -10,10 +16,10 @@ import modelo.Partida;
  * @author chaly
  */
 public class FrmTablero extends javax.swing.JFrame {
-    
+
     PnlDibujo panelDibujo;
     Partida partida;
-    
+
     /**
      * Creates new form FrmTablero
      */
@@ -25,15 +31,40 @@ public class FrmTablero extends javax.swing.JFrame {
         this.setResizable(false);
         agregarJugadoresTabla();
     }
-    
-    private void agregarJugadoresTabla(){
-        DefaultTableModel model = (DefaultTableModel) jTableJugadores.getModel();
-        for (Jugador object : partida.getJugadores()) {
-            model.addRow(new Object[]{object.getNombre(), 0});
+
+    private void agregarJugadoresTabla() {
+        Map<Integer, Color> colorMap = new HashMap<>();
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (int i = 0; i < partida.getJugadores().size(); i++) {
+            Jugador jugador = partida.getJugadores().get(i);
+            listModel.addElement(jugador.toString());
+            colorMap.put(i, jugador.getColor());
         }
-        
+
+        // Set a custom cell renderer for the JList to display colored items
+        puntajeList.setCellRenderer(new DefaultListCellRenderer() {
+            @Override
+            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                Component renderer = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+
+                // Set the foreground color based on the ScoreData's color
+                if (value instanceof String) {
+                    String stringValue = (String) value;
+                    String[] parts = stringValue.split("        ");
+                    if (parts.length == 2) {
+                        label.setForeground(partida.getJugadores().get(index).getColor());
+                    }
+                }
+
+                return renderer;
+            }
+        });
+
+        puntajeList.setModel(listModel);
+
     }
-    
+
     private void agregarTablero() {
         panelDibujo.setSize(600, 600);
         pnlConTablero.add(panelDibujo);
@@ -52,8 +83,9 @@ public class FrmTablero extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         pnlConTablero = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTableJugadores = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        puntajeList = new javax.swing.JList<>();
+        btnSalir = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -79,23 +111,20 @@ public class FrmTablero extends javax.swing.JFrame {
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jTableJugadores.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        puntajeList.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        puntajeList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(puntajeList);
 
-            },
-            new String [] {
-                "null", "null"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
             }
         });
-        jScrollPane2.setViewportView(jTableJugadores);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,23 +132,31 @@ public class FrmTablero extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(pnlConTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189))
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(201, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlConTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane3)
+                        .addComponent(pnlConTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(201, 201, 201))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +197,11 @@ public class FrmTablero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSalir;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTableJugadores;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel pnlConTablero;
+    private javax.swing.JList<String> puntajeList;
     // End of variables declaration//GEN-END:variables
 }

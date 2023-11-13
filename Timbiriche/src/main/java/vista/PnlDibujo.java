@@ -41,7 +41,7 @@ public class PnlDibujo extends javax.swing.JPanel implements MouseListener, Mous
     private void pintarPuntos(Graphics graphics) {
         graphics.setColor(Color.BLACK);
         int size = (tamanioX / puntosX);
-        int circleSize = (int) (size * 0.4);
+        int circleSize = (int) (size * 0.3);
 
         for (int i = 0; i < puntosX; i++) {
             for (int j = 0; j < puntosY; j++) {
