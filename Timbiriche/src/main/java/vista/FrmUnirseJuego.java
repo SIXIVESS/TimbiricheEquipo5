@@ -34,7 +34,8 @@ public FrmUnirseJuego(IUnirseJuego unirseJuego) {
         btnRegresar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Timbiriche");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -46,7 +47,7 @@ public FrmUnirseJuego(IUnirseJuego unirseJuego) {
 
         txtClave.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         txtClave.setText("Clave");
-        txtClave.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtClave.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnContinuar.setBackground(new java.awt.Color(255, 255, 204));
         btnContinuar.setText("Continuar");
@@ -72,7 +73,7 @@ public FrmUnirseJuego(IUnirseJuego unirseJuego) {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtClave)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(209, 209, 209)
@@ -103,6 +104,7 @@ public FrmUnirseJuego(IUnirseJuego unirseJuego) {
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 520));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
