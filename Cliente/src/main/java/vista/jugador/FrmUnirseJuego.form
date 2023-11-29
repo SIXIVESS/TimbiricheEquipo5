@@ -49,12 +49,12 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtClave1" min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Component id="txtPuerto" min="-2" pref="248" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtClave" min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Component id="txtIP" min="-2" pref="248" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="btnContinuar" min="-2" max="-2" attributes="0"/>
@@ -82,12 +82,12 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtClave" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIP" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtClave1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPuerto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
@@ -114,7 +114,7 @@
             <Property name="text" type="java.lang.String" value="Ingrese los datos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtClave">
+        <Component class="javax.swing.JTextField" name="txtIP">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="18" style="0"/>
@@ -123,6 +123,9 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIPKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnContinuar">
           <Properties>
@@ -168,7 +171,7 @@
             <Property name="text" type="java.lang.String" value="Puerto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtClave1">
+        <Component class="javax.swing.JTextField" name="txtPuerto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="18" style="0"/>
@@ -177,6 +180,9 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPuertoKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

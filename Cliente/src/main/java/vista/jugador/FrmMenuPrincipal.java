@@ -7,7 +7,7 @@ import dominio.Jugador;
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
-    private Jugador jugador;
+    Jugador jugador;
     Fondo fondo = new Fondo();
     IMenuPrincipal menuPrincipal;
 
@@ -15,6 +15,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
      * Creates new form FrmMenuPrincipal
      */
     public FrmMenuPrincipal(Jugador jugador) {
+        this.jugador = jugador;
         initComponents();
         if (jugador == null) {
             FrmConfiguracion config = new FrmConfiguracion();
@@ -24,7 +25,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         }
     }
     
-    public FrmMenuPrincipal(IMenuPrincipal menuPrincipal) {
+    public FrmMenuPrincipal(IMenuPrincipal menuPrincipal, Jugador jugador) {
+        this.jugador = jugador;
         this.menuPrincipal = menuPrincipal;
     }
 
@@ -54,7 +56,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         btnUnirse.setBackground(new java.awt.Color(255, 204, 255));
         btnUnirse.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        btnUnirse.setText("Unirse a un juego");
+        btnUnirse.setText("Unirse");
         btnUnirse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUnirseActionPerformed(evt);
@@ -109,13 +111,13 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUnirse, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnColores, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112)
+                .addGap(100, 100, 100)
                 .addComponent(btnSalir)
                 .addGap(39, 39, 39))
         );

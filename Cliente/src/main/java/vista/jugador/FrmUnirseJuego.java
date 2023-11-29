@@ -11,13 +11,17 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmUnirseJuego
+     *
+     * @param jugador
      */
     public FrmUnirseJuego(Jugador jugador) {
+        this.jugador = jugador;
         initComponents();
     }
 
-    public FrmUnirseJuego(IUnirseJuego unirseJuego) {
+    public FrmUnirseJuego(IUnirseJuego unirseJuego, Jugador jugador) {
         this.unirseJuego = unirseJuego;
+        this.jugador = jugador;
         initComponents();
     }
 
@@ -32,12 +36,12 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtClave = new javax.swing.JTextField();
+        txtIP = new javax.swing.JTextField();
         btnContinuar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtClave1 = new javax.swing.JTextField();
+        txtPuerto = new javax.swing.JTextField();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -51,8 +55,13 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 153, 255));
         jLabel1.setText("Ingrese los datos");
 
-        txtClave.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txtClave.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtIP.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        txtIP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtIP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIPKeyTyped(evt);
+            }
+        });
 
         btnContinuar.setBackground(new java.awt.Color(255, 255, 204));
         btnContinuar.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
@@ -78,8 +87,13 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel3.setText("Puerto:");
 
-        txtClave1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        txtClave1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtPuerto.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        txtPuerto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtPuerto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPuertoKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,11 +107,11 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtClave1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnContinuar)
                                 .addGap(137, 137, 137))
@@ -116,11 +130,11 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClave1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPuerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(57, 57, 57)
                 .addComponent(btnContinuar)
@@ -144,18 +158,35 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
-        String ip = null, port = null;
-
-        FrmSalaEspera se = FrmSalaEspera.getInstance();
-
-        if (se.ejecutarConexion(jugador, ip, Integer.valueOf(port))) {
-            se.setVisible(true);
-            this.dispose();
+        if (!this.txtIP.getText().isBlank() && !this.txtPuerto.getText().isBlank()) {
+            FrmSalaEspera se = FrmSalaEspera.getInstance(this.jugador);
+            if (se.ejecutarConexion(jugador, this.txtIP.getText(), Integer.parseInt(this.txtPuerto.getText()))) {
+                se.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo realizar la conexión con el servidor", "Fallo de Conexión", JOptionPane.ERROR_MESSAGE);
+                se = null;
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "No se pudo realizar la conexión con el servidor", "Fallo de Conexión", JOptionPane.ERROR_MESSAGE);
-            se = null;
+            JOptionPane.showMessageDialog(this, "Escriba una dirección IP y un puerto", "Conexión incompleta", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnContinuarActionPerformed
+
+    private void txtIPKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIPKeyTyped
+        char inputChar = evt.getKeyChar();
+        // Verificar si el carácter ingresado es un número o un punto y si no excede la longitud máxima
+        if (!(Character.isDigit(inputChar) || inputChar == '.') || this.txtIP.getText().length() >= 32) {
+            evt.consume(); // Ignorar el carácter si no es válido o excede la longitud máxima
+        }
+    }//GEN-LAST:event_txtIPKeyTyped
+
+    private void txtPuertoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPuertoKeyTyped
+        char inputChar = evt.getKeyChar();
+        // Verificar si el carácter ingresado es un número y si no excede la longitud de 4
+        if (!Character.isDigit(inputChar) || this.txtPuerto.getText().length() >= 4) {
+            evt.consume(); // Ignorar el carácter si no es válido o excede la longitud
+        }
+    }//GEN-LAST:event_txtPuertoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -166,7 +197,7 @@ public class FrmUnirseJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JTextField txtClave;
-    private javax.swing.JTextField txtClave1;
+    private javax.swing.JTextField txtIP;
+    private javax.swing.JTextField txtPuerto;
     // End of variables declaration//GEN-END:variables
 }

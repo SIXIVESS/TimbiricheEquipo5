@@ -3,7 +3,7 @@ package cliente;
 
 import dominio.DTO.LineaDTO;
 import dominio.DTO.JugadorDTO;
-import dominio.DTO.MensajeSockets;
+import enumeradores.MensajeSockets;
 import dominio.DTO.MovimientoDTO;
 import dominio.DTO.CuadroDTO;
 import dominio.FormaJuego;

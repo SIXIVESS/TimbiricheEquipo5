@@ -14,7 +14,7 @@ import dominio.Preferencia;
 public class FrmConfiguracion extends javax.swing.JFrame {
 
     private IAjustes ajustes = new Ajustes();
-    private String perfil = "255.255.255";
+    private String perfil = "255,255,255";
     private String colorSeleccionado;
 
     /**
@@ -47,7 +47,8 @@ public class FrmConfiguracion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Timbiriche");
+        setTitle("Registro de Jugador");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -185,7 +186,7 @@ public class FrmConfiguracion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        nombreUsuario();
+        registrarJugador();
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void colorRojoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colorRojoMouseClicked
@@ -207,22 +208,22 @@ public class FrmConfiguracion extends javax.swing.JFrame {
         this.perfil = "70,210,45";
         establecerColor((ImageIcon) colorVerde.getIcon(), "verde.png");
     }//GEN-LAST:event_colorVerdeMouseClicked
-
-    
-    private void establecerColor(ImageIcon color, String nombreAvatar) {
+  
+    private void establecerColor(ImageIcon color, String colorSeleccionado) {
         this.colorJugador.setIcon(color);
-        this.colorSeleccionado = nombreAvatar;
+        this.colorSeleccionado = colorSeleccionado;
     }
 
-    public void nombreUsuario() {
+    public void registrarJugador() {
         ajustes.informacionJugador(this.txtUsuario.getText(), this.perfil);
         if (txtUsuario.getText().isBlank() || colorJugador.getIcon() == null) {
-            JOptionPane.showMessageDialog(this, "Escriba un nickname y eliga un color", "Registro de jugador", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Escriba un nickname y eliga un color", "Registro incompleto", JOptionPane.ERROR_MESSAGE);
         } else {
             Jugador jugador = new Jugador(this.txtUsuario.getText(), this.colorSeleccionado);
             Preferencia pref = new Preferencia("#F53333", "#4747EF", "#49E949");
+            jugador.setColor("#F0F46C");
+            jugador.setPerfil(this.perfil);
             jugador.setPreferencia(pref);
-            jugador.setColor("#000000");
             new FrmMenuPrincipal(jugador).setVisible(true);
             this.dispose();
         }

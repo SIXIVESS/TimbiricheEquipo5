@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import dominio.Ajustes;
 import dominio.Jugador;
 import dominio.Marcador;
-import dominio.DTO.MensajeSockets;
+import enumeradores.MensajeSockets;
 import vista.juego.FrmTablero;
 
 /**
@@ -32,11 +32,11 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
     /**
      * Creates new form FrmSalaEspera
      */
-    public FrmSalaEspera() {
+    public FrmSalaEspera(Jugador jugador) {
+        this.jugador = jugador;
         initComponents();
-        jugador = ajustes.solicitarInformacion();
         this.lblNombre.setText(jugador.getNombre());
-        this.colorUsuario.setBackground(generarColor(jugador.getColor()));
+        this.colorUsuario.setBackground(generarColor(jugador.getPerfil()));
         this.sck = (ICliente) new Cliente(jugador, this);
         this.setVisible(true);
     }
@@ -46,9 +46,9 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
         return new Color(Integer.parseInt(rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2]));
     }
     
-    public static FrmSalaEspera getInstance() {
+    public static FrmSalaEspera getInstance(Jugador jugador) {
         if (instance == null) {
-            instance = new FrmSalaEspera();
+            instance = new FrmSalaEspera(jugador);
         }
         return instance;
     }

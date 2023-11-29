@@ -15,8 +15,8 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
 
 
     private Jugador jugador;
-    private Preferencia pref;
-    private List<PnlColorChooser> pnls = new ArrayList<>();
+    private Preferencia preferencias;
+    private List<PnlColorChooser> chooser = new ArrayList<>();
     private static FrmPreferenciaColores instance;
 
     /**
@@ -26,17 +26,17 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
         this.jugador = jugador;
         initComponents();
         PnlColorChooser pnlJugador = new PnlColorChooser(this.jugador.getColor());
-        pnls.add(pnlJugador);
+        chooser.add(pnlJugador);
         tabbed.add(pnlJugador);
-        tabbed.setTitleAt(0, "Tu");
+        tabbed.setTitleAt(0, "Tu jugador");
 
         List<String> colores = this.jugador.getPreferencia().getColores();
 
         for (int i = 1; i <= colores.size(); i++) {
             PnlColorChooser pnl = new PnlColorChooser(colores.get(i-1));
-            pnls.add(pnl);
+            chooser.add(pnl);
             tabbed.add(pnl);
-            tabbed.setTitleAt(i, "Jugador" + (i + 1));
+            tabbed.setTitleAt(i, "Jugador #" + (i + 1));
         }
     }
 
@@ -140,23 +140,23 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Guarda preferencias.
+     * Guarda preferenciaserencias.
      *
      * @param evt
      */
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-        Color color = pnls.get(0).getColorEscogido();
+        Color color = chooser.get(0).getColorEscogido();
         String colorHex1 = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
-        color = pnls.get(1).getColorEscogido();
+        color = chooser.get(1).getColorEscogido();
         String colorHex2 = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
-        color = pnls.get(2).getColorEscogido();
+        color = chooser.get(2).getColorEscogido();
         String colorHex3 = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
-        color = pnls.get(3).getColorEscogido();
+        color = chooser.get(3).getColorEscogido();
         String colorHex4 = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
 
         this.jugador.setColor(colorHex1);
-        pref = new Preferencia(colorHex2, colorHex3, colorHex4);
-        this.jugador.setPreferencia(pref);
+        preferencias = new Preferencia(colorHex2, colorHex3, colorHex4);
+        this.jugador.setPreferencia(preferencias);
         this.dispose();
     }//GEN-LAST:event_guardarActionPerformed
 

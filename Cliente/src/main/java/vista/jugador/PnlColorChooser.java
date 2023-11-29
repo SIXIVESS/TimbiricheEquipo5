@@ -87,7 +87,7 @@ public class PnlColorChooser extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panelColorEscogidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelColorEscogidoMouseClicked
-        Color color = JColorChooser.showDialog(this, "Escoge un color para la linea", Color.BLACK);
+        Color color = JColorChooser.showDialog(this, "Escoge un color personalizado para el jugador", Color.BLACK);
         if (color == null){
             color = Color.BLACK;
         }
