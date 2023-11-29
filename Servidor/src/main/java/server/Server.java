@@ -13,7 +13,7 @@ import java.util.List;
 public class Server {
 
     static volatile List<ServerHilo> threads = new ArrayList<>();
-    static int MAX = 3;
+    static int MAX = 2;
     private ServerProtocolo ssp = new ServerProtocolo();
     
     /**
