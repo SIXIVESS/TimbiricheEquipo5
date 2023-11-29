@@ -13,7 +13,7 @@ import java.util.List;
 public class Server {
 
     static volatile List<ServerHilo> threads = new ArrayList<>();
-    static int MAX = 4;
+    static int MAX = 3;
     private ServerProtocolo ssp = new ServerProtocolo();
     
     /**
@@ -23,7 +23,7 @@ public class Server {
         ServerSocket ss = new ServerSocket(9999);
         
         System.out.println("Servidor inicializado en el puerto 9999");
-        System.out.println("Soportando un total de " + MAX + " jugadores");
+        System.out.println("Soportando un máximo de " + MAX + " jugadores");
 
         Socket s;
 
