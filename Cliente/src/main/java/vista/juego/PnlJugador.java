@@ -24,11 +24,11 @@ public class PnlJugador extends javax.swing.JPanel {
         initComponents();
         this.setSize(new Dimension(280, 80));
         this.jugador = jugador;
-        if(!this.jugador.getRutaColor().equalsIgnoreCase("")){
-            this.labelAvt.setIcon(new ImageIcon("src\\Avatares\\" + this.jugador.getRutaColor()));
+        if(!this.jugador.getRutaColor().isBlank()){
+            this.labelColor.setIcon(new ImageIcon("src/main/resources/colores/" + this.jugador.getRutaColor()));
         }
-        this.labelNick.setText(this.jugador.getNombre());
-        this.labelPtj.setText(this.jugador.getPuntaje() + "");
+        this.labelNombre.setText(this.jugador.getNombre());
+        this.labelPuntos.setText(this.jugador.getPuntaje() + "");
         if(this.jugador.getColor() != null){
             this.setBackground(Color.decode(this.jugador.getColor()));
         }
@@ -48,8 +48,8 @@ public class PnlJugador extends javax.swing.JPanel {
      */
     public void setPuntaje(int puntaje){
         this.jugador.setPuntaje(puntaje);
-        this.labelPtj.setText(puntaje + "");
-        this.labelPtj.revalidate();
+        this.labelPuntos.setText(puntaje + "");
+        this.labelPuntos.revalidate();
     }
 
     /**
@@ -61,23 +61,25 @@ public class PnlJugador extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelAvt = new javax.swing.JLabel();
-        labelPtj = new javax.swing.JLabel();
-        labelNick = new javax.swing.JLabel();
+        labelColor = new javax.swing.JLabel();
+        labelPuntos = new javax.swing.JLabel();
+        labelNombre = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        labelAvt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        labelAvt.setMaximumSize(new java.awt.Dimension(50, 50));
-        labelAvt.setMinimumSize(new java.awt.Dimension(50, 50));
-        labelAvt.setPreferredSize(new java.awt.Dimension(50, 50));
+        labelColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        labelColor.setMaximumSize(new java.awt.Dimension(50, 50));
+        labelColor.setMinimumSize(new java.awt.Dimension(50, 50));
+        labelColor.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        labelPtj.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        labelPtj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPtj.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        labelPtj.setMaximumSize(new java.awt.Dimension(50, 50));
-        labelPtj.setMinimumSize(new java.awt.Dimension(50, 50));
-        labelPtj.setPreferredSize(new java.awt.Dimension(50, 50));
+        labelPuntos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelPuntos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPuntos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        labelPuntos.setMaximumSize(new java.awt.Dimension(50, 50));
+        labelPuntos.setMinimumSize(new java.awt.Dimension(50, 50));
+        labelPuntos.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        labelNombre.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,11 +87,11 @@ public class PnlJugador extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelAvt, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelColor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelNick, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelPtj, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -97,16 +99,18 @@ public class PnlJugador extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelNick, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPtj, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelAvt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelColor, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelAvt;
-    private javax.swing.JLabel labelNick;
-    private javax.swing.JLabel labelPtj;
+    private javax.swing.JLabel labelColor;
+    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelPuntos;
     // End of variables declaration//GEN-END:variables
 }
