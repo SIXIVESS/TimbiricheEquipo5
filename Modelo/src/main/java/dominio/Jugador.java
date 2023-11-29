@@ -18,9 +18,16 @@ public class Jugador {
     private int puntaje;
     private Preferencia preferencia;
     private String color;
-
+    private String perfil;
+    
     public Jugador(String nombre, String rutaColor) {
         this.nombre = nombre;
+        this.rutaColor = rutaColor;
+    }
+
+    public Jugador(String nombre, String rutaColor, String perfil) {
+        this.nombre = nombre;
+        this.perfil = perfil;
         this.rutaColor = rutaColor;
     }
 
@@ -36,6 +43,14 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
     public String getRutaColor() {
