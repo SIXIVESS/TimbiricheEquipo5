@@ -88,7 +88,7 @@ public class PnlTablero extends javax.swing.JPanel implements IObservable, Mouse
             }
         }
 
-        int tamanio = 200 / this.tablero.getDimension();
+        int tamanio = 240 / this.tablero.getDimension();
         //itera en todos los cuadrados del tablero y los dibuja
         for (Cuadro cuadro : this.tablero.getCuadros()) {
             if (cuadro.getJugador() != null) {
@@ -120,7 +120,7 @@ public class PnlTablero extends javax.swing.JPanel implements IObservable, Mouse
      */
     public void estableceTablero() {
         int cantidad = this.tablero.getDimension();
-        int tamanio = 200 / this.tablero.getDimension();
+        int tamanio = 210 / this.tablero.getDimension();
 
         double espaciado = UtilesTablero.obtenerEspaciadoDePuntos(cantidad, this.getHeight());
 
