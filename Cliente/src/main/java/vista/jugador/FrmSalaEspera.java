@@ -35,7 +35,7 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
     public FrmSalaEspera(Jugador jugador) {
         this.jugador = jugador;
         initComponents();
-        this.lblNombre.setText(jugador.getNombre());
+        this.lblNombre.setText(this.jugador.getNombre());
         this.colorUsuario.setBackground(generarColor(jugador.getPerfil()));
         this.sck = (ICliente) new Cliente(jugador, this);
         this.setVisible(true);
@@ -78,19 +78,19 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
         for (int i = 0; i < jugadores.size(); i++) {
             switch (i) {
                 case 0:
-                    this.lblIconJugador1.setIcon(new ImageIcon("src\\main\\resources\\colores\\" + jugadores.get(i).getRutaColor()));
-                    this.lblNombre.setText(jugadores.get(i).getNombre());
+                    this.lblIconJugador1.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
+                    this.lblNombreJugador1.setText(jugadores.get(i).getNombre());
                     break;
                 case 1:
-                    this.lblIconJugador2.setIcon(new ImageIcon("src\\main\\resources\\colores\\" + jugadores.get(i).getRutaColor()));
+                    this.lblIconJugador2.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
                     this.lblNombreJugador2.setText(jugadores.get(i).getNombre());
                     break;
                 case 2:
-                    this.lblIconJugador3.setIcon(new ImageIcon("src\\main\\resources\\colores\\" + jugadores.get(i).getRutaColor()));
+                    this.lblIconJugador3.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
                     this.lblNombreJugador3.setText(jugadores.get(i).getNombre());
                     break;
                 case 3:
-                    this.lblIconJugador4.setIcon(new ImageIcon("src\\main\\resources\\colores\\"+ jugadores.get(i).getRutaColor()));
+                    this.lblIconJugador4.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
                     this.lblNombreJugador4.setText(jugadores.get(i).getNombre());
                     break;
                 default:
@@ -199,6 +199,8 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
 
         lblIconJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        lblNombreJugador1.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
+
         javax.swing.GroupLayout pnlJugador1Layout = new javax.swing.GroupLayout(pnlJugador1);
         pnlJugador1.setLayout(pnlJugador1Layout);
         pnlJugador1Layout.setHorizontalGroup(
@@ -226,6 +228,8 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
         pnlJugador2.setMinimumSize(new java.awt.Dimension(250, 75));
 
         lblIconJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblNombreJugador2.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout pnlJugador2Layout = new javax.swing.GroupLayout(pnlJugador2);
         pnlJugador2.setLayout(pnlJugador2Layout);
@@ -255,6 +259,8 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
 
         lblIconJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        lblNombreJugador3.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
+
         javax.swing.GroupLayout pnlJugador3Layout = new javax.swing.GroupLayout(pnlJugador3);
         pnlJugador3.setLayout(pnlJugador3Layout);
         pnlJugador3Layout.setHorizontalGroup(
@@ -282,6 +288,8 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
         pnlJugador4.setMinimumSize(new java.awt.Dimension(250, 75));
 
         lblIconJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblNombreJugador4.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout pnlJugador4Layout = new javax.swing.GroupLayout(pnlJugador4);
         pnlJugador4.setLayout(pnlJugador4Layout);
@@ -315,15 +323,12 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(142, 142, 142))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(151, 151, 151))
@@ -341,19 +346,21 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
                                     .addComponent(btnVotar, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel10)))
-                        .addGap(22, 22, 22))))
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(144, 144, 144))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel9)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(20, 20, 20)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -365,7 +372,7 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
                         .addComponent(btnVotar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,9 +380,9 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
                 .addComponent(pnlJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 720));
