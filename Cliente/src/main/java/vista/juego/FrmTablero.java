@@ -13,6 +13,8 @@ import interfaces.IActualizable;
 import cliente.Cliente;
 import interfaces.ICliente;
 import interfaces.IObservador;
+import javax.swing.JOptionPane;
+import vista.jugador.FrmMenuPrincipal;
 
 /**
  *
@@ -152,8 +154,11 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador2 = new javax.swing.JPanel();
         pnlJugador3 = new javax.swing.JPanel();
         pnlJugador4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         pnlFondoTablero = new javax.swing.JPanel();
         pnlFondoOpt = new javax.swing.JPanel();
+        btnAbandonar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -224,17 +229,27 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setText("Turno de:");
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout pnlFondoMarcadorLayout = new javax.swing.GroupLayout(pnlFondoMarcador);
         pnlFondoMarcador.setLayout(pnlFondoMarcadorLayout);
         pnlFondoMarcadorLayout.setHorizontalGroup(
             pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoMarcadorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoMarcadorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField1)
+                    .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlFondoMarcadorLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlFondoMarcadorLayout.setVerticalGroup(
@@ -248,7 +263,11 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
                 .addComponent(pnlJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
         );
 
         pnlFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
@@ -270,15 +289,30 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlFondoOpt.setBackground(new java.awt.Color(255, 204, 255));
         pnlFondoOpt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btnAbandonar.setBackground(new java.awt.Color(255, 51, 51));
+        btnAbandonar.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        btnAbandonar.setText("Abandonar Partida");
+        btnAbandonar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbandonarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlFondoOptLayout = new javax.swing.GroupLayout(pnlFondoOpt);
         pnlFondoOpt.setLayout(pnlFondoOptLayout);
         pnlFondoOptLayout.setHorizontalGroup(
             pnlFondoOptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGroup(pnlFondoOptLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(btnAbandonar, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         pnlFondoOptLayout.setVerticalGroup(
             pnlFondoOptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 142, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoOptLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addComponent(btnAbandonar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -321,8 +355,20 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAbandonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbandonarActionPerformed
+        int confirm = JOptionPane.showConfirmDialog(this, "¿Seguro que quiere abandonar la partida?", "Abandonar partida", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            this.jugador.setPuntaje(0);
+            this.dispose();
+            new FrmMenuPrincipal(this.jugador).setVisible(true);
+        }
+    }//GEN-LAST:event_btnAbandonarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbandonar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pnlFondoMarcador;
     private javax.swing.JPanel pnlFondoOpt;
     private javax.swing.JPanel pnlFondoTablero;

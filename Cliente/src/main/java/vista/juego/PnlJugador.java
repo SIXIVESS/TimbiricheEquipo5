@@ -79,7 +79,7 @@ public class PnlJugador extends javax.swing.JPanel {
         labelPuntos.setMinimumSize(new java.awt.Dimension(50, 50));
         labelPuntos.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        labelNombre.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        labelNombre.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -95,7 +95,7 @@
     <Component class="javax.swing.JLabel" name="labelNombre">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Liberation Sans" size="18" style="1"/>
+          <Font name="Liberation Sans" size="15" style="1"/>
         </Property>
       </Properties>
     </Component>
