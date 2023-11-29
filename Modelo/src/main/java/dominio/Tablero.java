@@ -34,10 +34,10 @@ public class Tablero {
                 this.dimension = 10;
                 break;
             case 3:
-                this.dimension = 20;
+                this.dimension = 15;
                 break;
             case 4:
-                this.dimension = 40;
+                this.dimension = 20;
                 break;
         }
     }
