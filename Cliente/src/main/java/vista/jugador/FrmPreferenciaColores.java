@@ -62,13 +62,13 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
         tabbed = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Ajusta tus colores del tablero");
+        setTitle("Colores en tablero");
         setMinimumSize(new java.awt.Dimension(300, 300));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        guardar.setBackground(new java.awt.Color(153, 255, 153));
-        guardar.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        guardar.setBackground(new java.awt.Color(208, 244, 222));
+        guardar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
         guardar.setText("Guardar");
         guardar.setMaximumSize(new java.awt.Dimension(50, 100));
         guardar.setMinimumSize(new java.awt.Dimension(50, 100));
@@ -79,8 +79,8 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setBackground(new java.awt.Color(255, 153, 153));
-        cancelar.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        cancelar.setBackground(new java.awt.Color(255, 153, 200));
+        cancelar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.setMaximumSize(new java.awt.Dimension(50, 100));
         cancelar.setMinimumSize(new java.awt.Dimension(50, 100));

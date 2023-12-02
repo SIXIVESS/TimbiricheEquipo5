@@ -159,17 +159,19 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlFondoTablero = new javax.swing.JPanel();
         pnlFondoOpt = new javax.swing.JPanel();
         btnAbandonar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlFondoMarcador.setBackground(new java.awt.Color(255, 204, 255));
-        pnlFondoMarcador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlFondoMarcador.setBackground(new java.awt.Color(255, 255, 255));
         pnlFondoMarcador.setPreferredSize(new java.awt.Dimension(300, 500));
 
-        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador1.setBackground(new java.awt.Color(237, 246, 250));
+        pnlJugador1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
         pnlJugador1.setMaximumSize(new java.awt.Dimension(278, 80));
         pnlJugador1.setMinimumSize(new java.awt.Dimension(278, 80));
 
@@ -184,7 +186,8 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador2.setBackground(new java.awt.Color(237, 246, 250));
+        pnlJugador2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
         pnlJugador2.setMaximumSize(new java.awt.Dimension(278, 80));
         pnlJugador2.setMinimumSize(new java.awt.Dimension(278, 80));
 
@@ -199,7 +202,8 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador3.setBackground(new java.awt.Color(237, 246, 250));
+        pnlJugador3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
         pnlJugador3.setMaximumSize(new java.awt.Dimension(278, 80));
         pnlJugador3.setMinimumSize(new java.awt.Dimension(278, 80));
 
@@ -214,7 +218,8 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador4.setBackground(new java.awt.Color(237, 246, 250));
+        pnlJugador4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
         pnlJugador4.setMaximumSize(new java.awt.Dimension(278, 80));
         pnlJugador4.setMinimumSize(new java.awt.Dimension(278, 80));
 
@@ -229,49 +234,54 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 204));
         jLabel1.setText("Turno de:");
 
         jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jTextField1.setBackground(new java.awt.Color(239, 250, 237));
+        jTextField1.setFont(new java.awt.Font("Warung Kopi", 0, 18)); // NOI18N
+        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 249, 169), 2, true));
 
         javax.swing.GroupLayout pnlFondoMarcadorLayout = new javax.swing.GroupLayout(pnlFondoMarcador);
         pnlFondoMarcador.setLayout(pnlFondoMarcadorLayout);
         pnlFondoMarcadorLayout.setHorizontalGroup(
             pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoMarcadorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1)
-                    .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlFondoMarcadorLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addGroup(pnlFondoMarcadorLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                    .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         pnlFondoMarcadorLayout.setVerticalGroup(
             pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFondoMarcadorLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(pnlJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(pnlJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(pnlJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
 
+        jPanel1.add(pnlFondoMarcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 520));
+
         pnlFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
-        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(189, 221, 245), 2));
         pnlFondoTablero.setMaximumSize(new java.awt.Dimension(650, 650));
         pnlFondoTablero.setMinimumSize(new java.awt.Dimension(650, 650));
 
@@ -286,11 +296,13 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             .addGap(0, 648, Short.MAX_VALUE)
         );
 
-        pnlFondoOpt.setBackground(new java.awt.Color(255, 204, 255));
-        pnlFondoOpt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(pnlFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        btnAbandonar.setBackground(new java.awt.Color(255, 51, 51));
-        btnAbandonar.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        pnlFondoOpt.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnAbandonar.setBackground(new java.awt.Color(255, 153, 200));
+        btnAbandonar.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        btnAbandonar.setForeground(new java.awt.Color(102, 0, 51));
         btnAbandonar.setText("Abandonar Partida");
         btnAbandonar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,47 +321,30 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         );
         pnlFondoOptLayout.setVerticalGroup(
             pnlFondoOptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoOptLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+            .addGroup(pnlFondoOptLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(btnAbandonar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlFondoMarcador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlFondoOpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlFondoTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlFondoTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pnlFondoMarcador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlFondoOpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(pnlFondoOpt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -367,6 +362,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pnlFondoMarcador;
