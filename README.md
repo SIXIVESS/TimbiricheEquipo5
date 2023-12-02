@@ -1,6 +1,6 @@
-#Timbiriche
+# Timbiriche
 
-##Descripción del juego
+## Descripción del juego
 
 El juego de Timbiriche es una actividad que se lleva a cabo en una hoja de papel convertida en un tablero cuadriculado. Puede ser disfrutado por dos o más jugadores, 
 hasta un máximo de cuatro, dependiendo de la disposición de la cuadrícula en la hoja. Cada esquina del cuadro en la cuadrícula se marca como un punto de conexión. 
