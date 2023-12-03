@@ -1,20 +1,25 @@
 package dominio;
 
+import dominio.DTO.JugadorDTO;
 import enumeradores.Posicion;
+import interfaces.ITablero;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
  *
  * @author brawun
  */
-public class Tablero {
+public class Tablero  implements ITablero{
 
     private int dimension;
     private List<Linea> lineasHorizontales;
     private List<Linea> lineasVerticales;
     private List<Cuadro> cuadros;
     private List<Punto> puntos;
+    private int turnoActual = 0;
 
     public Tablero() {
         lineasHorizontales = new ArrayList<>();
@@ -22,6 +27,8 @@ public class Tablero {
         cuadros = new ArrayList<>();
         puntos = new ArrayList<>();
     }
+
+   
 
     public Tablero(int tamanio) {
         lineasHorizontales = new ArrayList<>();
@@ -41,6 +48,7 @@ public class Tablero {
                 break;
         }
     }
+    
 
     public void generaInstanciasDeFormaJuego() {
         //Todo esto se crea para poder asignar un jugador despues
@@ -110,5 +118,20 @@ public class Tablero {
 
     public void setPuntos(List<Punto> puntos) {
         this.puntos = puntos;
+    }
+
+    @Override
+    public void turnos(List<JugadorDTO> jugadores) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void otorgarPuntos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void anotarPunto() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

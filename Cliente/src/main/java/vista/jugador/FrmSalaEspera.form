@@ -328,7 +328,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="lblIconJugador3" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblNombreJugador22" min="-2" pref="430" max="-2" attributes="0"/>
+                      <Component id="lblNombreJugador3" min="-2" pref="430" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -338,7 +338,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblNombreJugador22" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="lblNombreJugador3" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="lblIconJugador3" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -356,7 +356,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblNombreJugador22">
+            <Component class="javax.swing.JLabel" name="lblNombreJugador3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Warung Kopi" size="18" style="0"/>

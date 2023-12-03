@@ -5,6 +5,7 @@ import dominio.Jugador;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -19,11 +20,13 @@ public class PnlJugador extends javax.swing.JPanel {
 
     /**
      * Crea PnlJugador.
+     * @param jugador
      */
     public PnlJugador(Jugador jugador) {
         initComponents();
         this.setSize(new Dimension(265, 83));
         this.jugador = jugador;
+        this.lblPuntos=lblPuntos;
         if(!this.jugador.getRutaColor().isBlank()){
             this.labelColor.setIcon(new ImageIcon("src/main/resources/colores/" + this.jugador.getRutaColor()));
         }
@@ -48,13 +51,15 @@ public class PnlJugador extends javax.swing.JPanel {
      */
     public void setPuntaje(int puntaje){
         this.jugador.setPuntaje(puntaje);
-        this.lblPuntos.setText(puntaje + "");
+        this.lblPuntos.setText(String.valueOf(puntaje));
         this.lblPuntos.revalidate();
     }
     
-    public void actualizarPuntaje() {
-    this.lblPuntos.setText(String.valueOf(this.jugador.getPuntaje()));
-    this.lblPuntos.repaint();
+   public void actualizarPuntaje() {
+    SwingUtilities.invokeLater(() -> {
+        this.lblPuntos.setText(String.valueOf(this.jugador.getPuntaje()));
+        this.lblPuntos.repaint();
+    });
 }
 
 

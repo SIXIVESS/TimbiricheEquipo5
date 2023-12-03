@@ -84,6 +84,10 @@ public class Jugador {
     public void setColor(String color) {
         this.color = color;
     }
+    
+    public void incrementarPuntaje() {
+        this.puntaje++;
+    }
 
     @Override
     public int hashCode() {

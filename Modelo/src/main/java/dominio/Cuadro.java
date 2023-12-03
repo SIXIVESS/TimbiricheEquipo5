@@ -3,6 +3,8 @@
  */
 package dominio;
 
+
+
 /**
  *
  * @author brawun
@@ -10,7 +12,7 @@ package dominio;
 public class Cuadro extends FormaJuego {
 
     private Linea superior, inferior, izquierda, derecha;
-
+ 
     public Cuadro(int indice) {
         super(null, indice, 0, 0, 0, 0);
     }
@@ -44,10 +46,11 @@ public class Cuadro extends FormaJuego {
                 || izquierda.equals(lineaBuscada) || derecha.equals(lineaBuscada);
     }
 
-    public boolean estaCompleto() {
+   public boolean estaCompleto() {
         return superior.getJugador() != null && inferior.getJugador() != null
                 && izquierda.getJugador() != null && derecha.getJugador() != null;
     }
+   
 
     @Override
     public String toString() {
