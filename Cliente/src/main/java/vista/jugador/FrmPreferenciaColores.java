@@ -69,6 +69,7 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
 
         guardar.setBackground(new java.awt.Color(208, 244, 222));
         guardar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
+        guardar.setForeground(new java.awt.Color(0, 102, 102));
         guardar.setText("Guardar");
         guardar.setMaximumSize(new java.awt.Dimension(50, 100));
         guardar.setMinimumSize(new java.awt.Dimension(50, 100));
@@ -81,6 +82,7 @@ public class FrmPreferenciaColores extends javax.swing.JFrame {
 
         cancelar.setBackground(new java.awt.Color(255, 153, 200));
         cancelar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
+        cancelar.setForeground(new java.awt.Color(102, 0, 51));
         cancelar.setText("Cancelar");
         cancelar.setMaximumSize(new java.awt.Dimension(50, 100));
         cancelar.setMinimumSize(new java.awt.Dimension(50, 100));

@@ -174,6 +174,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
         pnlJugador1.setMaximumSize(new java.awt.Dimension(278, 80));
         pnlJugador1.setMinimumSize(new java.awt.Dimension(278, 80));
+        pnlJugador1.setName(""); // NOI18N
 
         javax.swing.GroupLayout pnlJugador1Layout = new javax.swing.GroupLayout(pnlJugador1);
         pnlJugador1.setLayout(pnlJugador1Layout);
@@ -257,7 +258,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
                     .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         pnlFondoMarcadorLayout.setVerticalGroup(
             pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,9 +273,9 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
                 .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18))
         );
 
         jPanel1.add(pnlFondoMarcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 520));

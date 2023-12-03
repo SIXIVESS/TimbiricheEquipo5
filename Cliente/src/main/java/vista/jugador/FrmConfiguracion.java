@@ -12,10 +12,10 @@ import java.awt.Font;
  */
 public class FrmConfiguracion extends javax.swing.JFrame {
     
-    Font fontTitulo = new Font("Cocogoose Pro-trial", Font.BOLD, 48);
-     Font fontSubtitulo = new Font("Warung Kopi Bold", Font.BOLD, 24);
-     Font fontBotones = new Font("Warung Kopi Bold", Font.BOLD, 18);
-      Font fontTexto = new Font("Warung Kopi Regular", Font.PLAIN, 14);
+    Font fontTitulo = new Font("Cocogoose", Font.BOLD, 48);
+     Font fontSubtitulo = new Font("Warung Kopi", Font.BOLD, 24);
+     Font fontBotones = new Font("Warung Kopi", Font.BOLD, 18);
+      Font fontTexto = new Font("Warung Kopi", Font.PLAIN, 14);
 
     private String perfil = "255,255,255";
     private String colorSeleccionado;
@@ -25,9 +25,10 @@ public class FrmConfiguracion extends javax.swing.JFrame {
      */
     public FrmConfiguracion() {
         initComponents();
+          lblRegistro.setFont(fontTitulo);
         lblColores.setFont(fontSubtitulo);
         lblNombre.setFont(fontSubtitulo);
-        lblRegistro.setFont(fontTitulo);
+      
         txtUsuario.setFont(fontTexto);
         btnJugar.setFont(fontBotones);
     }
@@ -42,8 +43,8 @@ public class FrmConfiguracion extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblNombre = new javax.swing.JLabel();
         lblRegistro = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         lblColores = new javax.swing.JLabel();
         btnJugar = new javax.swing.JButton();
@@ -61,27 +62,31 @@ public class FrmConfiguracion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblNombre.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(255, 102, 204));
-        lblNombre.setText("Nombre de usuario");
-
         lblRegistro.setBackground(new java.awt.Color(102, 102, 255));
         lblRegistro.setFont(new java.awt.Font("Cocogoose", 1, 48)); // NOI18N
         lblRegistro.setForeground(new java.awt.Color(102, 102, 255));
+        lblRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRegistro.setText("Registro");
         lblRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        txtUsuario.setBackground(new java.awt.Color(194, 214, 245));
+        lblNombre.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 102, 204));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setText("Nombre de usuario:");
+        lblNombre.setAlignmentY(0.0F);
+
+        txtUsuario.setBackground(new java.awt.Color(234, 239, 247));
         txtUsuario.setFont(new java.awt.Font("Warung Kopi", 0, 14)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(51, 0, 51));
+        txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(189, 221, 245), 2, true));
 
         lblColores.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
         lblColores.setForeground(new java.awt.Color(255, 102, 204));
-        lblColores.setText("Colores");
+        lblColores.setText("Colores:");
 
         btnJugar.setBackground(new java.awt.Color(228, 193, 249));
         btnJugar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
-        btnJugar.setForeground(new java.awt.Color(51, 0, 102));
+        btnJugar.setForeground(new java.awt.Color(102, 0, 102));
         btnJugar.setText("Registrarme");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +94,8 @@ public class FrmConfiguracion extends javax.swing.JFrame {
             }
         });
 
-        colorJugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        colorJugador.setBackground(new java.awt.Color(235, 241, 243));
+        colorJugador.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(189, 221, 245), 2, true));
         colorJugador.setMaximumSize(new java.awt.Dimension(50, 50));
         colorJugador.setMinimumSize(new java.awt.Dimension(50, 50));
         colorJugador.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -127,55 +133,63 @@ public class FrmConfiguracion extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(lblRegistro))
+                .addGap(137, 137, 137)
+                .addComponent(lblRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(137, 137, 137))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(lblNombre))
+                .addGap(165, 165, 165)
+                .addComponent(lblNombre)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(99, 99, 99)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(colorJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(colorJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(lblColores))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(colorRojo)
-                .addGap(55, 55, 55)
-                .addComponent(colorAmarillo)
-                .addGap(55, 55, 55)
-                .addComponent(colorVerde)
-                .addGap(55, 55, 55)
-                .addComponent(colorAzul))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(lblColores))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(colorRojo)
+                        .addGap(55, 55, 55)
+                        .addComponent(colorAmarillo)
+                        .addGap(55, 55, 55)
+                        .addComponent(colorVerde)
+                        .addGap(55, 55, 55)
+                        .addComponent(colorAzul)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(64, 64, 64)
                 .addComponent(lblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(47, 47, 47)
                 .addComponent(lblNombre)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(colorJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addComponent(lblColores)
                 .addGap(18, 18, 18)
+                .addComponent(lblColores)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(colorRojo)
                     .addComponent(colorAmarillo)
                     .addComponent(colorVerde)
                     .addComponent(colorAzul))
-                .addGap(64, 64, 64)
-                .addComponent(btnJugar))
+                .addGap(56, 56, 56)
+                .addComponent(btnJugar)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 560, 550));
