@@ -28,7 +28,7 @@ public class PnlJugador extends javax.swing.JPanel {
             this.labelColor.setIcon(new ImageIcon("src/main/resources/colores/" + this.jugador.getRutaColor()));
         }
         this.labelNombre.setText(this.jugador.getNombre());
-        this.labelPuntos.setText(this.jugador.getPuntaje() + "");
+        this.lblPuntos.setText(this.jugador.getPuntaje() + "");
         if(this.jugador.getColor() != null){
             this.setBackground(Color.decode(this.jugador.getColor()));
         }
@@ -48,9 +48,15 @@ public class PnlJugador extends javax.swing.JPanel {
      */
     public void setPuntaje(int puntaje){
         this.jugador.setPuntaje(puntaje);
-        this.labelPuntos.setText(puntaje + "");
-        this.labelPuntos.revalidate();
+        this.lblPuntos.setText(puntaje + "");
+        this.lblPuntos.revalidate();
     }
+    
+    public void actualizarPuntaje() {
+    this.lblPuntos.setText(String.valueOf(this.jugador.getPuntaje()));
+    this.lblPuntos.repaint();
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,7 +68,7 @@ public class PnlJugador extends javax.swing.JPanel {
     private void initComponents() {
 
         labelColor = new javax.swing.JLabel();
-        labelPuntos = new javax.swing.JLabel();
+        lblPuntos = new javax.swing.JLabel();
         labelNombre = new javax.swing.JLabel();
 
         labelColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -70,14 +76,17 @@ public class PnlJugador extends javax.swing.JPanel {
         labelColor.setMinimumSize(new java.awt.Dimension(50, 50));
         labelColor.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        labelPuntos.setFont(new java.awt.Font("Cocogoose", 1, 14)); // NOI18N
-        labelPuntos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPuntos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        labelPuntos.setMaximumSize(new java.awt.Dimension(50, 50));
-        labelPuntos.setMinimumSize(new java.awt.Dimension(50, 50));
-        labelPuntos.setPreferredSize(new java.awt.Dimension(50, 50));
+        lblPuntos.setFont(new java.awt.Font("Warung Kopi", 1, 14)); // NOI18N
+        lblPuntos.setForeground(new java.awt.Color(0, 51, 102));
+        lblPuntos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPuntos.setText("0");
+        lblPuntos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lblPuntos.setMaximumSize(new java.awt.Dimension(50, 50));
+        lblPuntos.setMinimumSize(new java.awt.Dimension(50, 50));
+        lblPuntos.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        labelNombre.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        labelNombre.setFont(new java.awt.Font("Warung Kopi", 0, 18)); // NOI18N
+        labelNombre.setForeground(new java.awt.Color(0, 51, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,7 +98,7 @@ public class PnlJugador extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -99,7 +108,7 @@ public class PnlJugador extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelColor, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
@@ -111,6 +120,6 @@ public class PnlJugador extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel labelColor;
     private javax.swing.JLabel labelNombre;
-    private javax.swing.JLabel labelPuntos;
+    private javax.swing.JLabel lblPuntos;
     // End of variables declaration//GEN-END:variables
 }
