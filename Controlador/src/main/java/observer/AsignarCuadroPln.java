@@ -1,7 +1,7 @@
-package acciones;
+package observer;
 
 import dominio.DTO.CuadroDTO;
-import envio.DTO.EnvioCuadroDTO;
+import tuberias.DTO.EnvioCuadroDTO;
 import interfaces.IPAFAccion;
 
 /**

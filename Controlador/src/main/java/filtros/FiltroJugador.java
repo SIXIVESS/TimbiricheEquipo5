@@ -1,16 +1,16 @@
 
-package observer;
+package filtros;
 
-import interfaces.IObserver;
 import dominio.Jugador;
 import dominio.DTO.JugadorDTO;
-import envio.EnvioJugador;
+import tuberias.EnvioJugador;
+import interfaces.IFiltro;
 
 /**
  *
  * @author brawun
  */
-public class ObserverJugador implements IObserver<JugadorDTO, Jugador, EnvioJugador> {
+public class FiltroJugador implements IFiltro<JugadorDTO, Jugador, EnvioJugador> {
 
     @Override
     public void procesar(JugadorDTO objeto) {

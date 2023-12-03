@@ -1,18 +1,18 @@
 
-package observer;
+package filtros;
 
-import interfaces.IObserver;
 import dominio.Cuadro;
 import dominio.Jugador;
 import dominio.Linea;
 import dominio.DTO.CuadroDTO;
-import envio.EnvioCuadro;
+import tuberias.EnvioCuadro;
+import interfaces.IFiltro;
 
 /**
  *
  * @author brawun
  */
-public class ObserverCuadro implements IObserver<CuadroDTO, Cuadro, EnvioCuadro>{
+public class FiltroCuadro implements IFiltro<CuadroDTO, Cuadro, EnvioCuadro>{
 
     @Override
     public void procesar(CuadroDTO objeto) {

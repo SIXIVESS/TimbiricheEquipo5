@@ -1,5 +1,5 @@
 
-package envio;
+package tuberias;
 
 import dominio.Tablero;
 import acceso.Sincronizacion;

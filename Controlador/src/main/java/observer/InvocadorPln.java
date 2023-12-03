@@ -1,4 +1,4 @@
-package acciones;
+package observer;
 
 import dominio.DTO.CuadroDTO;
 import dominio.DTO.JugadorDTO;

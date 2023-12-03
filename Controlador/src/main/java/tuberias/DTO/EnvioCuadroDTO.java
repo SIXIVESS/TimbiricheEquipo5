@@ -1,19 +1,19 @@
 
-package envio.DTO;
+package tuberias.DTO;
 
 import dominio.DTO.CuadroDTO;
-import observer.ObserverCuadro;
+import filtros.FiltroCuadro;
 import interfaces.IEnvio;
 
 /**
  *
  * @author brawun
  */
-public class EnvioCuadroDTO implements IEnvio<CuadroDTO, ObserverCuadro>{
+public class EnvioCuadroDTO implements IEnvio<CuadroDTO, FiltroCuadro>{
 
     @Override
     public void pasar(CuadroDTO objeto) {
-        ObserverCuadro fc = new ObserverCuadro();
+        FiltroCuadro fc = new FiltroCuadro();
         fc.procesar(objeto);
     }
 }

@@ -1,20 +1,20 @@
 
-package envio;
+package tuberias;
 
 import dominio.Jugador;
 import java.util.List;
-import observer.ObserverMarcador;
+import filtros.FiltroMarcador;
 import interfaces.IEnvio;
 
 /**
  *
  * @author brawun
  */
-public class EnvioJugadores implements IEnvio<List<Jugador>, ObserverMarcador>{
+public class EnvioJugadores implements IEnvio<List<Jugador>, FiltroMarcador>{
 
     @Override
     public void pasar(List<Jugador> objeto) {
-        ObserverMarcador fm = new ObserverMarcador();
+        FiltroMarcador fm = new FiltroMarcador();
         fm.procesar(objeto);
     }
 }

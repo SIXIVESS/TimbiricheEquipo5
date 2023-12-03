@@ -1,15 +1,15 @@
 
-package observer;
+package filtros;
 
-import interfaces.IObserver;
 import dominio.Tablero;
-import envio.EnvioTablero;
+import tuberias.EnvioTablero;
+import interfaces.IFiltro;
 
 /**
  *
  * @author brawun
  */
-public class ObserverTablero implements IObserver<Integer, Tablero, EnvioTablero>{
+public class FiltroTablero implements IFiltro<Integer, Tablero, EnvioTablero>{
 
     @Override
     public void procesar(Integer objeto) {

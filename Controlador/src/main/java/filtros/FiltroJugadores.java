@@ -1,18 +1,18 @@
 
-package observer;
+package filtros;
 
-import interfaces.IObserver;
 import dominio.Jugador;
 import dominio.DTO.JugadorDTO;
 import java.util.ArrayList;
 import java.util.List;
-import envio.EnvioJugadores;
+import tuberias.EnvioJugadores;
+import interfaces.IFiltro;
 
 /**
  *
  * @author brawun
  */
-public class ObserverJugadores implements IObserver<List<JugadorDTO>, List<Jugador>, EnvioJugadores>{
+public class FiltroJugadores implements IFiltro<List<JugadorDTO>, List<Jugador>, EnvioJugadores>{
 
     @Override
     public void procesar(List<JugadorDTO> objeto) {

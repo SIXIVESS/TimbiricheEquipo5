@@ -1,18 +1,18 @@
 
-package observer;
+package filtros;
 
-import interfaces.IObserver;
 import dominio.Jugador;
 import dominio.Linea;
 import enumeradores.Posicion;
 import dominio.DTO.LineaDTO;
-import envio.EnvioLinea;
+import tuberias.EnvioLinea;
+import interfaces.IFiltro;
 
 /**
  *
  * @author brawun
  */
-public class ObserverLinea implements IObserver<LineaDTO, Linea, EnvioLinea>{
+public class FiltroLinea implements IFiltro<LineaDTO, Linea, EnvioLinea>{
 
     @Override
     public void procesar(LineaDTO objeto) {

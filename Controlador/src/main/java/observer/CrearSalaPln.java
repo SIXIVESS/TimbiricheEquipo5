@@ -1,9 +1,9 @@
-package acciones;
+package observer;
 
 import dominio.DTO.JugadorDTO;
 import java.util.List;
-import envio.DTO.EnvioJugadoresDTO;
-import envio.EnvioTamanio;
+import tuberias.DTO.EnvioJugadoresDTO;
+import tuberias.EnvioTamanio;
 import interfaces.IPAFAccion;
 
 /**

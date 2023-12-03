@@ -1,7 +1,7 @@
-package acciones;
+package observer;
 
 import dominio.DTO.JugadorDTO;
-import envio.DTO.EnvioJugadorDTO;
+import tuberias.DTO.EnvioJugadorDTO;
 import interfaces.IPAFAccion;
 
 /**

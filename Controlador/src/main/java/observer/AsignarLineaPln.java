@@ -1,7 +1,7 @@
-package acciones;
+package observer;
 
 import dominio.DTO.LineaDTO;
-import envio.DTO.EnvioLineaDTO;
+import tuberias.DTO.EnvioLineaDTO;
 import interfaces.IPAFAccion;
 
 /**

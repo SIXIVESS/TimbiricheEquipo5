@@ -1,18 +1,18 @@
-package envio.DTO;
+package tuberias.DTO;
 
 import dominio.DTO.JugadorDTO;
-import observer.ObserverJugador;
+import filtros.FiltroJugador;
 import interfaces.IEnvio;
 
 /**
  *
  * @author brawun
  */
-public class EnvioJugadorDTO implements IEnvio<JugadorDTO, ObserverJugador> {
+public class EnvioJugadorDTO implements IEnvio<JugadorDTO, FiltroJugador> {
 
     @Override
     public void pasar(JugadorDTO objeto) {
-        ObserverJugador fj = new ObserverJugador();
+        FiltroJugador fj = new FiltroJugador();
         fj.procesar(objeto);
     }
 }
