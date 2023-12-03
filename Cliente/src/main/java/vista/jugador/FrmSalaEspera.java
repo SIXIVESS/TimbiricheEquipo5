@@ -3,11 +3,9 @@ package vista.jugador;
 import cliente.Cliente;
 import interfaces.ICliente;
 import interfaces.IActualizable;
-import interfaces.IAjustes;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.ImageIcon;
-import dominio.Ajustes;
 import dominio.Jugador;
 import dominio.Marcador;
 import enumeradores.MensajeSockets;
@@ -24,7 +22,6 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
     private int port;
     private static FrmSalaEspera instance;
 
-    IAjustes ajustes = new Ajustes();
     private ICliente sck;
 
     private int jugadoresDibujados = 0;

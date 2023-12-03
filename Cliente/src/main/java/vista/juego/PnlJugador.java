@@ -22,7 +22,7 @@ public class PnlJugador extends javax.swing.JPanel {
      */
     public PnlJugador(Jugador jugador) {
         initComponents();
-        this.setSize(new Dimension(280, 80));
+        this.setSize(new Dimension(265, 83));
         this.jugador = jugador;
         if(!this.jugador.getRutaColor().isBlank()){
             this.labelColor.setIcon(new ImageIcon("src/main/resources/colores/" + this.jugador.getRutaColor()));
@@ -89,7 +89,7 @@ public class PnlJugador extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(labelColor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

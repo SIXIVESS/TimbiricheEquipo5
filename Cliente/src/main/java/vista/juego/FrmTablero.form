@@ -75,17 +75,15 @@
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jTextField1" pref="260" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="pnlJugador1" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="pnlJugador2" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="pnlJugador3" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pnlJugador4" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="pnlJugador1" alignment="0" pref="260" max="32767" attributes="0"/>
+                          <Component id="pnlJugador2" alignment="0" pref="260" max="32767" attributes="0"/>
+                          <Component id="pnlJugador3" alignment="0" pref="260" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlJugador4" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -350,7 +348,7 @@
                   <Color blue="c8" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Warung Kopi" size="24" style="1"/>
+                  <Font name="Warung Kopi" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="0" red="66" type="rgb"/>

@@ -251,14 +251,13 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
                 .addGap(19, 19, 19)
                 .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                    .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
+                    .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         pnlFondoMarcadorLayout.setVerticalGroup(
             pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +300,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlFondoOpt.setBackground(new java.awt.Color(255, 255, 255));
 
         btnAbandonar.setBackground(new java.awt.Color(255, 153, 200));
-        btnAbandonar.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        btnAbandonar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
         btnAbandonar.setForeground(new java.awt.Color(102, 0, 51));
         btnAbandonar.setText("Abandonar Partida");
         btnAbandonar.addActionListener(new java.awt.event.ActionListener() {
@@ -353,6 +352,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
     private void btnAbandonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbandonarActionPerformed
         int confirm = JOptionPane.showConfirmDialog(this, "¿Seguro que quiere abandonar la partida?", "Abandonar partida", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
+            this.sala.eliminarJugador(this.jugador);
             this.jugador.setPuntaje(0);
             this.dispose();
             new FrmMenuPrincipal(this.jugador).setVisible(true);
