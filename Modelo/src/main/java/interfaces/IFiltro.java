@@ -7,7 +7,7 @@ package interfaces;
  * @param <O> Salida
  * @param <P> Pipe de salida
  */
-public interface IObserver<I, O, P> {
+public interface IFiltro<I, O, P> {
 
     void procesar(I objeto);
 }
