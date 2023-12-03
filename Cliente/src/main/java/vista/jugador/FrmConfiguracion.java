@@ -4,12 +4,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import dominio.Jugador;
 import dominio.Preferencia;
+import java.awt.Font;
 
 /**
  *
  * @author chaly
  */
 public class FrmConfiguracion extends javax.swing.JFrame {
+    
+    Font fontTitulo = new Font("Cocogoose", Font.BOLD, 48);
+     Font fontSubtitulo = new Font("Warung Kopi", Font.BOLD, 24);
+     Font fontBotones = new Font("Warung Kopi", Font.BOLD, 18);
+      Font fontTexto = new Font("Warung Kopi", Font.PLAIN, 14);
 
     private String perfil = "255,255,255";
     private String colorSeleccionado;
@@ -19,6 +25,11 @@ public class FrmConfiguracion extends javax.swing.JFrame {
      */
     public FrmConfiguracion() {
         initComponents();
+        lblColores.setFont(fontSubtitulo);
+        lblNombre.setFont(fontSubtitulo);
+        lblRegistro.setFont(fontTitulo);
+        txtUsuario.setFont(fontTexto);
+        btnJugar.setFont(fontBotones);
     }
     
     /**
@@ -31,10 +42,10 @@ public class FrmConfiguracion extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblRegistro = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblColores = new javax.swing.JLabel();
         btnJugar = new javax.swing.JButton();
         colorJugador = new javax.swing.JLabel();
         colorRojo = new javax.swing.JLabel();
@@ -50,27 +61,27 @@ public class FrmConfiguracion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 102, 204));
-        jLabel3.setText("Nombre de usuario");
+        lblNombre.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 102, 204));
+        lblNombre.setText("Nombre de usuario");
 
-        jLabel2.setBackground(new java.awt.Color(102, 102, 255));
-        jLabel2.setFont(new java.awt.Font("Cocogoose", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel2.setText("Registro");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblRegistro.setBackground(new java.awt.Color(102, 102, 255));
+        lblRegistro.setFont(new java.awt.Font("Cocogoose", 1, 48)); // NOI18N
+        lblRegistro.setForeground(new java.awt.Color(102, 102, 255));
+        lblRegistro.setText("Registro");
+        lblRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtUsuario.setBackground(new java.awt.Color(194, 214, 245));
-        txtUsuario.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Warung Kopi", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(51, 0, 51));
 
-        jLabel4.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 102, 204));
-        jLabel4.setText("Colores");
+        lblColores.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        lblColores.setForeground(new java.awt.Color(255, 102, 204));
+        lblColores.setText("Colores");
 
         btnJugar.setBackground(new java.awt.Color(228, 193, 249));
         btnJugar.setFont(new java.awt.Font("Warung Kopi", 1, 18)); // NOI18N
-        btnJugar.setForeground(new java.awt.Color(0, 51, 102));
+        btnJugar.setForeground(new java.awt.Color(51, 0, 102));
         btnJugar.setText("Registrarme");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,10 +128,10 @@ public class FrmConfiguracion extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(159, 159, 159)
-                .addComponent(jLabel2))
+                .addComponent(lblRegistro))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(152, 152, 152)
-                .addComponent(jLabel3))
+                .addComponent(lblNombre))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +139,7 @@ public class FrmConfiguracion extends javax.swing.JFrame {
                 .addComponent(colorJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(240, 240, 240)
-                .addComponent(jLabel4))
+                .addComponent(lblColores))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(colorRojo)
@@ -146,9 +157,9 @@ public class FrmConfiguracion extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
-                .addComponent(jLabel3)
+                .addComponent(lblNombre)
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -156,7 +167,7 @@ public class FrmConfiguracion extends javax.swing.JFrame {
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(colorJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
-                .addComponent(jLabel4)
+                .addComponent(lblColores)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(colorRojo)
@@ -227,10 +238,10 @@ public class FrmConfiguracion extends javax.swing.JFrame {
     private javax.swing.JLabel colorRojo;
     private javax.swing.JLabel colorVerde;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblColores;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblRegistro;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
