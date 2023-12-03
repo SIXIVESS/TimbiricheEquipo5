@@ -9,7 +9,7 @@ import dominio.DTO.RespuestaDTO;
 import java.util.List;
 import interfaces.IPAF;
 import interfaces.IRepo;
-import acciones.InvocadorPln;
+import observer.InvocadorPln;
 
 /**
  *
