@@ -188,23 +188,23 @@ public class FrmConfiguracion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void colorRojoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colorRojoMouseClicked
-        this.perfil = "239, 71, 111";
+        this.perfil = "239,71,111";
         establecerColor((ImageIcon) colorRojo.getIcon(), "rojo.png");
     }//GEN-LAST:event_colorRojoMouseClicked
 
     private void colorAmarilloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colorAmarilloMouseClicked
-        this.perfil = "255, 209, 102";
-        establecerColor((ImageIcon) colorAmarillo.getIcon(), "azul.png");
+        this.perfil = "255,209,102";
+        establecerColor((ImageIcon) colorAmarillo.getIcon(), "amarillo.png");
     }//GEN-LAST:event_colorAmarilloMouseClicked
 
     private void colorVerdeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colorVerdeMouseClicked
-        this.perfil = "6, 214, 160";
-        establecerColor((ImageIcon) colorVerde.getIcon(), "amarillo.png");
+        this.perfil = "6,214,160";
+        establecerColor((ImageIcon) colorVerde.getIcon(), "verde.png");
     }//GEN-LAST:event_colorVerdeMouseClicked
 
     private void colorAzulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colorAzulMouseClicked
-        this.perfil = "17, 138, 178";
-        establecerColor((ImageIcon) colorAzul.getIcon(), "verde.png");
+        this.perfil = "17,138,178";
+        establecerColor((ImageIcon) colorAzul.getIcon(), "azul.png");
     }//GEN-LAST:event_colorAzulMouseClicked
   
     private void establecerColor(ImageIcon color, String colorSeleccionado) {

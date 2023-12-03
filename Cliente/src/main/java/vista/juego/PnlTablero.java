@@ -62,11 +62,11 @@ public class PnlTablero extends javax.swing.JPanel implements IObservable, Mouse
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setBackground(Color.BLACK);
+        g2.setBackground(Color.DARK_GRAY);
 
         //Itera en todos los puntos del tablero y los dibuja
         for (Punto punto : this.tablero.getPuntos()) {
-            FormaPolygon puntoPl = new FormaPolygon(punto, Color.BLACK);
+            FormaPolygon puntoPl = new FormaPolygon(punto, Color.DARK_GRAY);
             puntoPl.renderizar(g);
         }
 
