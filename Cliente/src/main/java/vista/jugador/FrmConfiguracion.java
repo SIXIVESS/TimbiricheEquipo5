@@ -12,10 +12,10 @@ import java.awt.Font;
  */
 public class FrmConfiguracion extends javax.swing.JFrame {
     
-    Font fontTitulo = new Font("Cocogoose", Font.BOLD, 48);
-     Font fontSubtitulo = new Font("Warung Kopi", Font.BOLD, 24);
-     Font fontBotones = new Font("Warung Kopi", Font.BOLD, 18);
-      Font fontTexto = new Font("Warung Kopi", Font.PLAIN, 14);
+    Font fontTitulo = new Font("Cocogoose Pro-trial", Font.BOLD, 48);
+     Font fontSubtitulo = new Font("Warung Kopi Bold", Font.BOLD, 24);
+     Font fontBotones = new Font("Warung Kopi Bold", Font.BOLD, 18);
+      Font fontTexto = new Font("Warung Kopi Regular", Font.PLAIN, 14);
 
     private String perfil = "255,255,255";
     private String colorSeleccionado;
