@@ -1,4 +1,3 @@
-
 package vista.juego;
 
 import dominio.FormaJuego;
@@ -60,88 +59,86 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         }
     }
 
-//    private void establecerMarcador() {
-//        for (int i = 0; i < this.sala.getMarcador().getJugadores().size(); i++) {
-//            switch (i) {
-//                case 0:
-//                    pnlJugador1.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
-//                    pnlJugador1.revalidate();
-//                    break;
-//                case 1:
-//                    pnlJugador2.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
-//                    pnlJugador2.revalidate();
-//                    break;
-//                case 2:
-//                    pnlJugador3.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
-//                    pnlJugador3.revalidate();
-//                    break;
-//                case 3:
-//                    pnlJugador4.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
-//                    pnlJugador4.revalidate();
-//                    break;
-//                default:
-//                    break;
-//            }
-//
-//            this.validate();
-//
-//        }
-//    }
-//
-//    private void actualizarMarcador(Marcador marcador) {
-//        for (int i = 0; i < this.sala.getMarcador().getJugadores().size(); i++) {
-//            switch (i) {
-//                case 0:
-//                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
-//                    pnlJugador1.revalidate();
-//                    break;
-//                case 1:
-//                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
-//                    pnlJugador2.revalidate();
-//                    break;
-//                case 2:
-//                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
-//                    pnlJugador3.revalidate();
-//                    break;
-//                case 3:
-//                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
-//                    pnlJugador4.revalidate();
-//                    break;
-//                default:
-//                    break;
-//            }
-//
-//            this.validate();
-//        }
-//    }
-    
     private void establecerMarcador() {
-    establecerMarcadorEnPanel(pnlJugador1, 0);
-    establecerMarcadorEnPanel(pnlJugador2, 1);
-    establecerMarcadorEnPanel(pnlJugador3, 2);
-    establecerMarcadorEnPanel(pnlJugador4, 3);
-    this.validate();
-}
+        for (int i = 0; i < this.sala.getMarcador().getJugadores().size(); i++) {
+            switch (i) {
+                case 0:
+                    pnlJugador1.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
+                    pnlJugador1.revalidate();
+                    break;
+                case 1:
+                    pnlJugador2.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
+                    pnlJugador2.revalidate();
+                    break;
+                case 2:
+                    pnlJugador3.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
+                    pnlJugador3.revalidate();
+                    break;
+                case 3:
+                    pnlJugador4.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(i)));
+                    pnlJugador4.revalidate();
+                    break;
+                default:
+                    break;
+            }
 
-private void actualizarMarcador(Marcador marcador) {
-    actualizarMarcadorEnPanel(pnlJugador1, 0, marcador);
-    actualizarMarcadorEnPanel(pnlJugador2, 1, marcador);
-    actualizarMarcadorEnPanel(pnlJugador3, 2, marcador);
-    actualizarMarcadorEnPanel(pnlJugador4, 3, marcador);
-    this.validate();
-}
+            this.validate();
 
-private void establecerMarcadorEnPanel(JPanel panel, int jugadorIndex) {
-    panel.removeAll();
-    panel.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(jugadorIndex)));
-    panel.revalidate();
-}
+        }
+    }
 
-private void actualizarMarcadorEnPanel(JPanel panel, int jugadorIndex, Marcador marcador) {
-    ((PnlJugador) panel.getComponent(0)).setPuntaje(marcador.getJugadores().get(jugadorIndex).getPuntaje());
-    panel.revalidate();
-}
+    private void actualizarMarcador(Marcador marcador) {
+        for (int i = 0; i < this.sala.getMarcador().getJugadores().size(); i++) {
+            switch (i) {
+                case 0:
+                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador1.revalidate();
+                    break;
+                case 1:
+                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador2.revalidate();
+                    break;
+                case 2:
+                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador3.revalidate();
+                    break;
+                case 3:
+                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador4.revalidate();
+                    break;
+                default:
+                    break;
+            }
 
+            this.validate();
+        }
+    }
+
+//    private void establecerMarcador() {
+//    establecerMarcadorEnPanel(pnlJugador1, 0);
+//    establecerMarcadorEnPanel(pnlJugador2, 1);
+//    establecerMarcadorEnPanel(pnlJugador3, 2);
+//    establecerMarcadorEnPanel(pnlJugador4, 3);
+//    this.validate();
+//}
+//
+//private void actualizarMarcador(Marcador marcador) {
+//    actualizarMarcadorEnPanel(pnlJugador1, 0, marcador);
+//    actualizarMarcadorEnPanel(pnlJugador2, 1, marcador);
+//    actualizarMarcadorEnPanel(pnlJugador3, 2, marcador);
+//    actualizarMarcadorEnPanel(pnlJugador4, 3, marcador);
+//    this.validate();
+//}
+    private void establecerMarcadorEnPanel(JPanel panel, int jugadorIndex) {
+        panel.removeAll();
+        panel.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(jugadorIndex)));
+        panel.revalidate();
+    }
+
+    private void actualizarMarcadorEnPanel(JPanel panel, int jugadorIndex, Marcador marcador) {
+        ((PnlJugador) panel.getComponent(0)).setPuntaje(marcador.getJugadores().get(jugadorIndex).getPuntaje());
+        panel.revalidate();
+    }
 
     private void establecerTablero() {
         this.pnlTablero = new PnlTablero(this.sala.getTablero(), jugador);
