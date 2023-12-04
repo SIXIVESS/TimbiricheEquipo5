@@ -8,11 +8,11 @@ import interfaces.IPAFAccion;
  *
  * @author brawun
  */
-public class RetirarJugadorPln implements IPAFAccion {
+public class RetirarJugador implements IPAFAccion {
 
     private JugadorDTO jugador;
 
-    public RetirarJugadorPln(JugadorDTO jugador) {
+    public RetirarJugador(JugadorDTO jugador) {
         this.jugador = jugador;
     }
 

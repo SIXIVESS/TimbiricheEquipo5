@@ -8,11 +8,11 @@ import interfaces.IPAFAccion;
  *
  * @author brawun
  */
-class AsignarLineaPln implements IPAFAccion {
+class AsignarLinea implements IPAFAccion {
 
     private LineaDTO linea;
 
-    public AsignarLineaPln(LineaDTO linea) {
+    public AsignarLinea(LineaDTO linea) {
         this.linea = linea;
     }
 

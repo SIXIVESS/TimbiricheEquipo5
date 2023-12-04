@@ -10,11 +10,11 @@ import interfaces.IPAFAccion;
  *
  * @author brawun
  */
-class CrearSalaPln implements IPAFAccion {
+class CrearSala implements IPAFAccion {
 
     private List<JugadorDTO> jugadores;
 
-    public CrearSalaPln(List<JugadorDTO> jugadores) {
+    public CrearSala(List<JugadorDTO> jugadores) {
         this.jugadores = jugadores;
     }
 

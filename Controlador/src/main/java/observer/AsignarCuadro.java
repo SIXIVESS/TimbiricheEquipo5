@@ -8,11 +8,11 @@ import interfaces.IPAFAccion;
  *
  * @author brawun
  */
-class AsignarCuadroPln implements IPAFAccion {
+class AsignarCuadro implements IPAFAccion {
 
     private CuadroDTO cuadro;
 
-    public AsignarCuadroPln(CuadroDTO cuadro) {
+    public AsignarCuadro(CuadroDTO cuadro) {
         this.cuadro = cuadro;
     }
 

@@ -11,31 +11,31 @@ import interfaces.IPAFAccion;
  *
  * @author brawun
  */
-public class InvocadorPln implements IPAF {
+public class Invocador implements IPAF {
 
     IPAFAccion comando;
 
     @Override
     public void crearSala(List<JugadorDTO> jugadores) {
-        comando = new CrearSalaPln(jugadores);
+        comando = new CrearSala(jugadores);
         comando.ejecutar();
     }
 
     @Override
     public void asignarLinea(LineaDTO linea) {
-        comando = new AsignarLineaPln(linea);
+        comando = new AsignarLinea(linea);
         comando.ejecutar();
     }
 
     @Override
     public void asignarCuadro(CuadroDTO cuadro) {
-        comando = new AsignarCuadroPln(cuadro);
+        comando = new AsignarCuadro(cuadro);
         comando.ejecutar();
     }
 
     @Override
     public void retirarJugador(JugadorDTO jugador) {
-        comando = new RetirarJugadorPln(jugador);
+        comando = new RetirarJugador(jugador);
         comando.ejecutar();
     }
 }
