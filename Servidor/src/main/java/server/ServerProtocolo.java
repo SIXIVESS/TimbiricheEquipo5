@@ -9,7 +9,7 @@ import dominio.DTO.RespuestaDTO;
 import java.util.List;
 import interfaces.IPAF;
 import interfaces.IRepo;
-import observer.InvocadorPln;
+import observer.Invocador;
 
 /**
  *
@@ -21,7 +21,7 @@ public class ServerProtocolo {
     private IRepo repo;
 
     public ServerProtocolo() {
-        this.ipaf = new InvocadorPln();
+        this.ipaf = new Invocador();
         this.repo = new Acceso();
     }
 
