@@ -59,4 +59,9 @@ public class Sala {
     public void eliminarJugador(Jugador jugador){
         this.marcador.getJugadores().remove(jugador);
     }
+
+    @Override
+    public String toString() {
+        return "Sala{" + "tablero=" + tablero + ", marcador=" + marcador + ", tamanio=" + tamanio + '}';
+    }
 }

@@ -38,6 +38,6 @@ public class Linea extends FormaJuego {
 
     @Override
     public String toString() {
-        return "Linea{" + "posicion=" + posicion + "jugador=" + super.getJugador() + "indice" + super.getIndice() + '}';
+        return "Linea{" + "posicion= " + posicion + ", jugador=" + super.getJugador() + ", indice=" + super.getIndice() + '}';
     }
 }
