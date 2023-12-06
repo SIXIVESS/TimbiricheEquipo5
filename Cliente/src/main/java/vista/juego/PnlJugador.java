@@ -4,6 +4,7 @@ package vista.juego;
 import dominio.Jugador;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.lang.reflect.InvocationTargetException;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
@@ -26,7 +27,6 @@ public class PnlJugador extends javax.swing.JPanel {
         initComponents();
         this.setSize(new Dimension(265, 83));
         this.jugador = jugador;
-        this.lblPuntos=lblPuntos;
         if(!this.jugador.getRutaColor().isBlank()){
             this.labelColor.setIcon(new ImageIcon("src/main/resources/colores/" + this.jugador.getRutaColor()));
         }
@@ -55,7 +55,7 @@ public class PnlJugador extends javax.swing.JPanel {
         this.lblPuntos.revalidate();
     }
     
-   public void actualizarPuntaje() {
+   public void actualizarPuntaje() throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeLater(() -> {
         this.lblPuntos.setText(String.valueOf(this.jugador.getPuntaje()));
         this.lblPuntos.repaint();

@@ -12,6 +12,7 @@ import interfaces.IActualizable;
 import cliente.Cliente;
 import interfaces.ICliente;
 import interfaces.IObservador;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import vista.jugador.FrmMenuPrincipal;
@@ -26,6 +27,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
     private Jugador jugador;
     private ICliente sck;
     private PnlTablero pnlTablero;
+    private int contador = 0;
 
     public FrmTablero(Marcador marcador, Jugador jugador) {
         this.jugador = jugador;
@@ -44,6 +46,8 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         establecerColores();
         establecerMarcador();
         establecerTablero();
+
+        this.txtTurno.setText(this.sala.getMarcador().getJugadores().get(this.sala.getMarcador().getSiguiente()).getNombre());
     }
 
     private void establecerColores() {
@@ -114,42 +118,27 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         }
     }
 
-//    private void establecerMarcador() {
-//    establecerMarcadorEnPanel(pnlJugador1, 0);
-//    establecerMarcadorEnPanel(pnlJugador2, 1);
-//    establecerMarcadorEnPanel(pnlJugador3, 2);
-//    establecerMarcadorEnPanel(pnlJugador4, 3);
-//    this.validate();
-//}
-//
-//private void actualizarMarcador(Marcador marcador) {
-//    actualizarMarcadorEnPanel(pnlJugador1, 0, marcador);
-//    actualizarMarcadorEnPanel(pnlJugador2, 1, marcador);
-//    actualizarMarcadorEnPanel(pnlJugador3, 2, marcador);
-//    actualizarMarcadorEnPanel(pnlJugador4, 3, marcador);
-//    this.validate();
-//}
-    private void establecerMarcadorEnPanel(JPanel panel, int jugadorIndex) {
-        panel.removeAll();
-        panel.add(new PnlJugador(this.sala.getMarcador().getJugadores().get(jugadorIndex)));
-        panel.revalidate();
-    }
-
-    private void actualizarMarcadorEnPanel(JPanel panel, int jugadorIndex, Marcador marcador) {
-        ((PnlJugador) panel.getComponent(0)).setPuntaje(marcador.getJugadores().get(jugadorIndex).getPuntaje());
-        panel.revalidate();
-    }
-
     private void establecerTablero() {
         this.pnlTablero = new PnlTablero(this.sala.getTablero(), jugador);
         pnlTablero.agrega(this);
-
         pnlTablero.setSize(this.pnlFondoTablero.getSize());
         pnlTablero.setBorder(this.pnlFondoTablero.getBorder());
         this.pnlFondoTablero.add(pnlTablero);
         pnlTablero.estableceTablero();
         pnlTablero.setVisible(true);
         pnlTablero.repaint();
+    }
+
+    public static int obtenerNumeroRandom(int min, int max) {
+        // Verifica que el rango sea válido
+        if (min > max) {
+            throw new IllegalArgumentException("El valor mínimo debe ser menor o igual al valor máximo.");
+        }
+
+        Random random = new Random();
+        // La fórmula para obtener un número aleatorio en el rango [min, max] es: 
+        // min + random.nextInt(max - min + 1)
+        return min + random.nextInt(max - min + 1);
     }
 
     /**
@@ -180,8 +169,8 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador2 = new javax.swing.JPanel();
         pnlJugador3 = new javax.swing.JPanel();
         pnlJugador4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblTurnoDe = new javax.swing.JLabel();
+        txtTurno = new javax.swing.JTextField();
         pnlFondoTablero = new javax.swing.JPanel();
         pnlFondoOpt = new javax.swing.JPanel();
         btnAbandonar = new javax.swing.JButton();
@@ -195,6 +184,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
 
         pnlFondoMarcador.setBackground(new java.awt.Color(255, 255, 255));
         pnlFondoMarcador.setPreferredSize(new java.awt.Dimension(300, 500));
+        pnlFondoMarcador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlJugador1.setBackground(new java.awt.Color(237, 246, 250));
         pnlJugador1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
@@ -206,12 +196,14 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador1.setLayout(pnlJugador1Layout);
         pnlJugador1Layout.setHorizontalGroup(
             pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
         pnlJugador1Layout.setVerticalGroup(
             pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
+
+        pnlFondoMarcador.add(pnlJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 12, 260, -1));
 
         pnlJugador2.setBackground(new java.awt.Color(237, 246, 250));
         pnlJugador2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
@@ -222,12 +214,14 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador2.setLayout(pnlJugador2Layout);
         pnlJugador2Layout.setHorizontalGroup(
             pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
         pnlJugador2Layout.setVerticalGroup(
             pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
+
+        pnlFondoMarcador.add(pnlJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 108, 260, -1));
 
         pnlJugador3.setBackground(new java.awt.Color(237, 246, 250));
         pnlJugador3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
@@ -238,12 +232,14 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador3.setLayout(pnlJugador3Layout);
         pnlJugador3Layout.setHorizontalGroup(
             pnlJugador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
         pnlJugador3Layout.setVerticalGroup(
             pnlJugador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
+
+        pnlFondoMarcador.add(pnlJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 204, 260, -1));
 
         pnlJugador4.setBackground(new java.awt.Color(237, 246, 250));
         pnlJugador4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 222, 249), 2, true));
@@ -254,55 +250,25 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
         pnlJugador4.setLayout(pnlJugador4Layout);
         pnlJugador4Layout.setHorizontalGroup(
             pnlJugador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
         pnlJugador4Layout.setVerticalGroup(
             pnlJugador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 204));
-        jLabel1.setText("Turno de:");
+        pnlFondoMarcador.add(pnlJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 300, 260, -1));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(239, 250, 237));
-        jTextField1.setFont(new java.awt.Font("Warung Kopi", 0, 18)); // NOI18N
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 249, 169), 2, true));
+        lblTurnoDe.setFont(new java.awt.Font("Warung Kopi", 1, 24)); // NOI18N
+        lblTurnoDe.setForeground(new java.awt.Color(255, 102, 204));
+        lblTurnoDe.setText("Turno de:");
+        pnlFondoMarcador.add(lblTurnoDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 402, -1, -1));
 
-        javax.swing.GroupLayout pnlFondoMarcadorLayout = new javax.swing.GroupLayout(pnlFondoMarcador);
-        pnlFondoMarcador.setLayout(pnlFondoMarcadorLayout);
-        pnlFondoMarcadorLayout.setHorizontalGroup(
-            pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoMarcadorLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(pnlJugador1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(pnlJugador2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(pnlJugador3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, Short.MAX_VALUE)
-                    .addGroup(pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pnlJugador4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        pnlFondoMarcadorLayout.setVerticalGroup(
-            pnlFondoMarcadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoMarcadorLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(pnlJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(pnlJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(pnlJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(pnlJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
-        );
+        txtTurno.setEditable(false);
+        txtTurno.setBackground(new java.awt.Color(239, 250, 237));
+        txtTurno.setFont(new java.awt.Font("Warung Kopi", 0, 18)); // NOI18N
+        txtTurno.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 249, 169), 2, true));
+        pnlFondoMarcador.add(txtTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 443, 260, 59));
 
         jPanel1.add(pnlFondoMarcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 520));
 
@@ -388,10 +354,9 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblTurnoDe;
     private javax.swing.JPanel pnlFondoMarcador;
     private javax.swing.JPanel pnlFondoOpt;
     private javax.swing.JPanel pnlFondoTablero;
@@ -399,6 +364,7 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
     private javax.swing.JPanel pnlJugador2;
     private javax.swing.JPanel pnlJugador3;
     private javax.swing.JPanel pnlJugador4;
+    private javax.swing.JTextField txtTurno;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -407,12 +373,19 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
             System.out.println("Actualizando marcador");
             Marcador marcador = (Marcador) mensaje;
             actualizarMarcador((Marcador) mensaje);
+            
+            this.sala.getMarcador().setSiguiente(this.sala.getMarcador().getSiguiente() + 1);
+            if (this.sala.getMarcador().getSiguiente() == this.sala.getMarcador().getJugadores().size()) {
+                this.sala.getMarcador().setSiguiente(0);
+            }
 
             for (int i = 0; i < marcador.getJugadores().size(); i++) {
                 if (marcador.getJugadores().indexOf(this.jugador) == marcador.getSiguiente()) {
                     this.pnlTablero.actualizaTurno(true);
                 }
             }
+
+            this.txtTurno.setText(this.sala.getMarcador().getJugadores().get(this.sala.getMarcador().getSiguiente()).getNombre());
         } else if (mensaje instanceof List) {
             List<FormaJuego> formas = (List<FormaJuego>) mensaje;
 
@@ -428,11 +401,24 @@ public class FrmTablero extends javax.swing.JFrame implements IObservador, IActu
                     }
                 }
             }
+
+            int cantidadJugadores = this.sala.getMarcador().getJugadores().size();
+            int siguiente = this.sala.getMarcador().getSiguiente();
+            
+            if (cantidadJugadores < siguiente) {
+                this.sala.getMarcador().setSiguiente(0);
+                pnlJugador2.revalidate();
+            } else {
+                this.sala.getMarcador().setSiguiente(this.sala.getMarcador().getSiguiente() + 1);
+            }
+
+            this.txtTurno.setText(this.sala.getMarcador().getJugadores().get(this.sala.getMarcador().getSiguiente()).getNombre());
         }
     }
 
     @Override
-    public void actualiza(List<FormaJuego> movimiento) {
+    public void actualiza(List<FormaJuego> movimiento
+    ) {
         sck.enviarAlServidor(movimiento);
     }
 }

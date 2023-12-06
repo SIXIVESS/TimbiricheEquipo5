@@ -79,12 +79,12 @@ public class FrmSalaEspera extends javax.swing.JFrame implements IActualizable {
                     this.lblNombreJugador1.setText(jugadores.get(i).getNombre());
                     break;
                 case 1:
-                    this.lblIconJugador3.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
-                    this.lblNombreJugador3.setText(jugadores.get(i).getNombre());
-                    break;
-                case 2:
                     this.lblIconJugador2.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
                     this.lblNombreJugador2.setText(jugadores.get(i).getNombre());
+                    break;
+                case 2:
+                    this.lblIconJugador3.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));
+                    this.lblNombreJugador3.setText(jugadores.get(i).getNombre());
                     break;
                 case 3:
                     this.lblIconJugador4.setIcon(new ImageIcon("src/main/resources/colores/" + jugadores.get(i).getRutaColor()));

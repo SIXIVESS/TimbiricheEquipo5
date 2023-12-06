@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import interfaces.IActualizable;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  *
@@ -102,7 +103,11 @@ public class SckClient implements Runnable {
                     objeto = marcador;
                 } else if (objeto instanceof RespuestaDTO) {
                     MovimientoDTO movimiento = ((RespuestaDTO) objeto).getMovimiento();
+                    MarcadorDTO marcadorDTO = ((RespuestaDTO) objeto).getMarcador();
+                    
                     List<FormaJuego> formas = new ArrayList<>();
+                    List<JugadorDTO> jugadoresDTO = marcadorDTO.getJugadores();
+                    List<Jugador> jugadores = new ArrayList<>();
 
                     if (movimiento.getLinea() != null) {
                         LineaDTO lineaDTO = movimiento.getLinea();
@@ -114,7 +119,6 @@ public class SckClient implements Runnable {
                                         lineaDTO.getJugador().getRutaAvatar(),
                                         lineaDTO.getJugador().getPuntaje()),
                                 lineaDTO.getIndice());
-
                         formas.add(linea);
                     }
 
@@ -128,11 +132,8 @@ public class SckClient implements Runnable {
 
                         formas.add(cuadro);
                     }
-
-                    MarcadorDTO marcadorDTO = ((RespuestaDTO) objeto).getMarcador();
+                    
                     System.out.println("MarcadorDTO " + marcadorDTO);
-                    List<JugadorDTO> jugadoresDTO = marcadorDTO.getJugadores();
-                    List<Jugador> jugadores = new ArrayList<>();
 
                     for (JugadorDTO jugador : jugadoresDTO) {
                         jugadores.add(new Jugador(jugador.getNombreJugador(), jugador.getRutaAvatar(), jugador.getPuntaje()));
@@ -153,11 +154,15 @@ public class SckClient implements Runnable {
                 System.out.println(objeto);
             } catch (IOException | ClassNotFoundException ex) {
                 Logger.getLogger(SckClient.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SckClient.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InvocationTargetException ex) {
+                Logger.getLogger(SckClient.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
 
-    private synchronized void mostrarCambios() {
+    private synchronized void mostrarCambios() throws InterruptedException, InvocationTargetException {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
